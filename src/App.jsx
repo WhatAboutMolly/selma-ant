@@ -16,7 +16,7 @@ function App() {
           // Seed Token
           colorPrimary: "#5273e0",
           fontFamily: "Poppins , sans-serif",
-          colorBgLayout: "rgb(2, 8, 23)",
+          //colorBgLayout: "rgb(2, 8, 23)",
           //borderRadius: 2,
           colorBgContainer: "rgb(2, 8, 23)",
           colorBgBase: "rgb(2, 8, 23)",

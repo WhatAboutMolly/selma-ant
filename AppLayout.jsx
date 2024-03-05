@@ -66,11 +66,9 @@ const AppLayout = () => {
             border: "none",
           }}
         >
-          <a href="/facture">
-            <Menu.Item>
-              <span className="nav-text">Login</span>
-            </Menu.Item>
-          </a>
+          <Menu.Item>
+            <span className="nav-text">Login</span>
+          </Menu.Item>
           <a>
             <Menu.Item>
               <span className="nav-text">Register</span>

@@ -1,0 +1,19 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 325px;
+  margin-top: 30px;
+}
+
+.header-container-img img {
+  height: 100%;
+}
+
+.facture-table {
+}
