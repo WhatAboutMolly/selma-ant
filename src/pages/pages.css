@@ -17,3 +17,11 @@
 
 .facture-table {
 }
+
+/*Profil clients*/
+
+.clients-container,
+.comptables-container {
+  display: flex;
+  gap: 20px;
+}

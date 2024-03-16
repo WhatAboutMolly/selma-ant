@@ -1,74 +1,18 @@
 import React from "react";
 import { Badge, Calendar } from "antd";
-const getListData = (value) => {
-  let listData;
-  switch (value.date()) {
-    case 8:
-      listData = [
-        {
-          type: "warning",
-          content: "This is warning event.",
-        },
-        {
-          type: "success",
-          content: "This is usual event.",
-        },
-      ];
-      break;
-    case 10:
-      listData = [
-        {
-          type: "warning",
-          content: "This is warning event.",
-        },
-        {
-          type: "success",
-          content: "This is usual event.",
-        },
-        {
-          type: "error",
-          content: "This is error event.",
-        },
-      ];
-      break;
-    case 15:
-      listData = [
-        {
-          type: "warning",
-          content: "This is warning event",
-        },
-        {
-          type: "success",
-          content: "This is very long usual event......",
-        },
-        {
-          type: "error",
-          content: "This is error event 1.",
-        },
-        {
-          type: "error",
-          content: "This is error event 2.",
-        },
-        {
-          type: "error",
-          content: "This is error event 3.",
-        },
-        {
-          type: "error",
-          content: "This is error event 4.",
-        },
-      ];
-      break;
-    default:
-  }
-  return listData || [];
-};
+import "./ui.css";
+import { useSelector } from "react-redux";
+import { selectG50 } from "../features/declaration fisc/decFiscSlice";
+
 const getMonthData = (value) => {
   if (value.month() === 8) {
     return 1394;
   }
 };
 const DFCalendar = () => {
+  const G50 = useSelector(selectG50);
+  console.log(G50);
+
   const monthCellRender = (value) => {
     const num = getMonthData(value);
     return num ? (
@@ -78,23 +22,19 @@ const DFCalendar = () => {
       </div>
     ) : null;
   };
-  const dateCellRender = (value) => {
-    const listData = getListData(value);
-    return (
-      <ul className="events">
-        {listData.map((item) => (
-          <li key={item.content}>
-            <Badge status={item.type} text={item.content} />
-          </li>
-        ))}
-      </ul>
-    );
-  };
   const cellRender = (current, info) => {
-    if (info.type === "date") return dateCellRender(current);
     if (info.type === "month") return monthCellRender(current);
     return info.originNode;
   };
-  return <Calendar cellRender={cellRender} />;
+  return (
+    <Calendar
+      cellRender={cellRender}
+      onSelect={(date, { source }) => {
+        if (source === "month") {
+          console.log("Panel Select:", date);
+        }
+      }}
+    />
+  );
 };
 export default DFCalendar;

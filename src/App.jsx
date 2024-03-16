@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Button, ConfigProvider, Input, Space, theme } from "antd";
 
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import AppLayout from "../AppLayout";
 
@@ -14,7 +12,7 @@ function App() {
       theme={{
         token: {
           // Seed Token
-          colorPrimary: "#5273e0",
+          /*colorPrimary: "#5273e0",
           fontFamily: "Poppins , sans-serif",
           //colorBgLayout: "rgb(2, 8, 23)",
           //borderRadius: 2,
@@ -27,7 +25,7 @@ function App() {
           colorFillQuaternary: "rgb(2, 8, 23)",
           colorBorderSecondary: "#fff",
           controlItemBgActive: "rgb(30, 41, 59)",
-          colorBgTextHover: "rgb(30, 41, 59)",
+          colorBgTextHover: "rgb(30, 41, 59)",*/
         },
         algorithm: theme.darkAlgorithm,
       }}

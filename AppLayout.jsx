@@ -8,10 +8,28 @@ import {
   CalendarClock,
   Folders,
 } from "lucide-react";
+import {
+  createBrowserRouter,
+  Link,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "./src/features/user/userSlice";
 
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 import AppRoutes from "./AppRoutes";
-import { Link } from "react-router-dom";
+import Login from "./src/pages/Login";
+import Facture from "./src/pages/Facture";
+import DeclFisc from "./src/pages/DeclFisc";
+import DeclParaFisc from "./src/pages/DeclParaFisc";
+import HomePage from "./src/pages/Home";
+import RequireAuth from "./RequireAuth";
+import Clients from "./src/pages/Clients";
+import Comptables from "./src/pages/Comptables";
+import AppHeader from "./src/components/AppHeader";
+
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ["1", "2", "3"].map((key) => ({
   key,
@@ -26,56 +44,32 @@ function getItem(label, key, icon, type, children) {
     type,
   };
 }
+
 const items2 = [
+  getItem(<Link to="/">Home</Link>, "1", <Home size={18} />),
+  getItem(<Link to="/facture">Facture</Link>, "2", <FileStack size={18} />),
   getItem(
-    <a href="https://ant.design" target="_blank">
-      Navigation Four - Link
-    </a>,
-    "1",
-    <Home size={18} />
+    <Link to="/dec-fisc">Declaration fiscale</Link>,
+    "3",
+    <CalendarClock size={18} />
   ),
-  getItem("Facture", "2", <FileStack size={18} />),
-  getItem("Declaration fiscale", "3", <CalendarClock size={18} />),
-  getItem("Declaration para-fiscale", "4", <CalendarClock size={18} />),
-  getItem("Etat financier", "5", <Folders size={18} />),
-  getItem("Archive", "6", <FolderArchive size={18} />),
-  getItem("Paiement", "7", <CreditCard size={18} />),
+  getItem(
+    <Link to="/dec-para-fisc">Declaration para-fiscale</Link>,
+    "4",
+    <CalendarClock size={18} />
+  ),
+  getItem(<Link to="/">Etat financier</Link>, "5", <Folders size={18} />),
+  getItem(<Link to="/">Archive</Link>, "6", <FolderArchive size={18} />),
+  getItem(<Link to="/">Paiement</Link>, "7", <CreditCard size={18} />),
 ];
 const AppLayout = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+  const user = useSelector(selectUser);
   return (
     <Layout>
-      <Header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          padding: 0,
-        }}
-      >
-        <div className="demo-logo" />
-        <Menu
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["2"]}
-          style={{
-            flex: 1,
-            minWidth: 0,
-            padding: "0 50px",
-            border: "none",
-          }}
-        >
-          <Menu.Item>
-            <span className="nav-text">Login</span>
-          </Menu.Item>
-          <a>
-            <Menu.Item>
-              <span className="nav-text">Register</span>
-            </Menu.Item>
-          </a>
-        </Menu>
-      </Header>
+      <AppHeader></AppHeader>
       <Content
         style={{
           padding: "24px 48px",
@@ -111,7 +105,37 @@ const AppLayout = () => {
               minHeight: 280,
             }}
           >
-            <AppRoutes />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/comptables" element={<Comptables />} />
+              <Route path="/clients/:idCompt" element={<Clients />} />
+              <Route path="/clients" element={<Clients />} />
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/facture"
+                element={
+                  <RequireAuth>
+                    <Facture />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/dec-fisc"
+                element={
+                  <RequireAuth>
+                    <DeclFisc />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/dec-para-fisc"
+                element={
+                  <RequireAuth>
+                    <DeclParaFisc />
+                  </RequireAuth>
+                }
+              />
+            </Routes>
           </Content>
         </Layout>
       </Content>

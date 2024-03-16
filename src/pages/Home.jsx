@@ -1,18 +1,13 @@
 import React from "react";
 import "./pages.css";
 import TableFacture from "../components/TableFacture";
+import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="home-container">
-      <div className="header-container">
-        <div className="header-container-img">
-          <img src="/src/assets/header/facture.svg" />
-        </div>
-      </div>
-      <div className="facture-table">
-        <TableFacture />
-      </div>
+    <div>
+      <Link to="/clients">clients</Link>
+      <Link to="/comptables">Comptables</Link>
     </div>
   );
 }

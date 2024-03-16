@@ -1,0 +1,43 @@
+.events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.events .ant-badge-status {
+  width: 100%;
+  overflow: hidden;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.notes-month {
+  font-size: 28px;
+  text-align: center;
+}
+.notes-month section {
+  font-size: 28px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ant-card-meta {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.ant-card-meta-avatar {
+  height: 100px !important;
+  width: 100px !important;
+  align-self: center;
+  padding-bottom: 20px;
+}
+
+.ant-card-meta-avatar span,
+.ant-card-meta-avatar img {
+  height: 100%;
+  width: 100%;
+}
