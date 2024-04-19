@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 
 export default function Clients() {
   const { idCompt } = useParams();
-  console.log(idCompt);
   const selectedClients = idCompt
     ? clients.filter((c) => c.numeroComptable == idCompt && c)
     : clients;
@@ -19,6 +18,7 @@ export default function Clients() {
           image={c.image}
           email={c.email}
           telephone={c.telephone}
+          numeroClient={c.numeroClient}
         />
       ))}
     </div>

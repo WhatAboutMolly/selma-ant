@@ -1,26 +1,6 @@
-export const clients = [
-  {
-    numeroClient: "CLT001",
-    title: "Biopharma",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    email: "recipient@example.com",
-    telephone: "+1234567890",
-    numeroComptable: "C002",
-    image:
-      "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
-  },
-  {
-    numeroClient: "CLT002",
-    title: "ParaPharma",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    email: "recipient@example.com",
-    telephone: "+1234567890",
-    numeroComptable: "C001",
-    image: "https://pharmashop-dz.com/img/pharmashopdz--logo-1624489966.jpg",
-  },
-];
+import { createSlice } from "@reduxjs/toolkit";
 
-export const comptables = [
+const initialState = [
   {
     nom: "Jean",
     prenom: "Dupont",
@@ -65,3 +45,32 @@ export const comptables = [
       "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
   },
 ];
+
+export const comptableSlice = createSlice({
+  name: "comptable",
+  initialState,
+  reducers: {
+    AddTache: {
+      reducer(state, action) {
+        const index = state.findIndex(
+          (comptable) =>
+            comptable.numeroComptable === action.payload.numeroComptable
+        );
+        if (index !== -1) {
+          console.log(action.payload);
+          const newTask = {
+            fichier: action.payload.fichier,
+            par: action.payload.par,
+            date: action.payload.date,
+            description: action.payload.description,
+          };
+          state[index].listTaches.unshift({ ...newTask });
+        }
+      },
+    },
+  },
+});
+
+export const { AddTache } = comptableSlice.actions;
+export default comptableSlice.reducer;
+export const selectAllComptables = (state) => state.comptable;

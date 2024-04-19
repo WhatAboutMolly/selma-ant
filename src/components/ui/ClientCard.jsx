@@ -8,11 +8,12 @@ import {
   MailOutlined,
 } from "@ant-design/icons";
 import "../ui.css";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
 const ClientCard = ({ ...props }) => {
-  const { title, description, image, email, telephone } = props;
+  const { title, description, image, email, telephone, numeroClient } = props;
   return (
     <Card
       hoverable

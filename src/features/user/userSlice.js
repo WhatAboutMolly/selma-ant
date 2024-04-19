@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { logged: false, role: "", username: "" };
+const initialState = { logged: false, role: "", username: "", code: "" };
 
 export const userSlice = createSlice({
   name: "user",
@@ -11,7 +11,8 @@ export const userSlice = createSlice({
         console.log(state);
         state.logged = action.payload.logged;
         state.username = action.payload.username;
-        state.role = "EC";
+        state.role = action.payload.role;
+        state.code = action.payload.code;
       },
     },
   },
@@ -20,3 +21,4 @@ export const userSlice = createSlice({
 export const { UpdateUser } = userSlice.actions;
 export default userSlice.reducer;
 export const selectUser = (state) => state.user;
+export const getUsername = (state) => state.user.username;

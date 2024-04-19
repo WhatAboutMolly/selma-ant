@@ -21,9 +21,13 @@ const Login = () => {
       values.username.startsWith("C_") &&
       values.password == "password"
     ) {
-      console.log("we enter");
       dispatch(
-        UpdateUser({ logged: true, role: "C", username: values.username })
+        UpdateUser({
+          logged: true,
+          role: "C",
+          username: values.username,
+          code: "C001",
+        })
       );
       navigate("/clients");
     }

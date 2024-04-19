@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Home,
@@ -7,6 +7,7 @@ import {
   FileStack,
   CalendarClock,
   Folders,
+  ListChecks,
 } from "lucide-react";
 import {
   createBrowserRouter,
@@ -29,44 +30,84 @@ import RequireAuth from "./RequireAuth";
 import Clients from "./src/pages/Clients";
 import Comptables from "./src/pages/Comptables";
 import AppHeader from "./src/components/AppHeader";
+import ListTaches from "./src/pages/ListTaches";
+import InfoClients from "./src/pages/InfoClients";
+import ChecklistPage from "./src/pages/ChecklistPage";
+import Archives from "./src/pages/Archives";
+import ArchiveFisc from "./src/pages/archives/ArchiveFisc";
 
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ["1", "2", "3"].map((key) => ({
   key,
   label: `nav ${key}`,
 }));
-function getItem(label, key, icon, type, children) {
+function getItem(label, key, icon, children) {
   return {
     key,
     icon,
     children,
     label,
-    type,
   };
 }
 
-const items2 = [
-  getItem(<Link to="/">Home</Link>, "1", <Home size={18} />),
-  getItem(<Link to="/facture">Facture</Link>, "2", <FileStack size={18} />),
-  getItem(
-    <Link to="/dec-fisc">Declaration fiscale</Link>,
-    "3",
-    <CalendarClock size={18} />
-  ),
-  getItem(
-    <Link to="/dec-para-fisc">Declaration para-fiscale</Link>,
-    "4",
-    <CalendarClock size={18} />
-  ),
-  getItem(<Link to="/">Etat financier</Link>, "5", <Folders size={18} />),
-  getItem(<Link to="/">Archive</Link>, "6", <FolderArchive size={18} />),
-  getItem(<Link to="/">Paiement</Link>, "7", <CreditCard size={18} />),
+let items2 = [
+  { key: "0", icon: <Home size={18} />, label: <Link to="/">Home</Link> },
+  {
+    key: "2",
+    icon: <FileStack size={18} />,
+    label: <Link to="/facture">Facture</Link>,
+  },
+  {
+    key: "3",
+    icon: <CalendarClock size={18} />,
+    label: <Link to="/dec-fisc">Declaration fiscale</Link>,
+  },
+  {
+    key: "4",
+    icon: <CalendarClock size={18} />,
+    label: <Link to="/dec-para-fisc">Declaration para-fiscale</Link>,
+  },
+  {
+    key: "sub",
+    icon: <FileStack size={18} />,
+    label: <Link to="/archives">Archive</Link>,
+    children: [
+      {
+        key: "6",
+        label: <Link to="/archives/facture">Archive Facture</Link>,
+      },
+      {
+        key: "7",
+        label: <Link to="/archives/relevBnq">Archive Relevé Bancaire</Link>,
+      },
+      {
+        key: "8",
+        label: <Link to="/archives/fiscal">Archive Fiscaux</Link>,
+      },
+    ],
+  },
 ];
 const AppLayout = () => {
+  const [itemsMenu, setItemsMenu] = useState(items2);
+  const user = useSelector(selectUser);
+
+  useEffect(() => {
+    const newItem = {
+      key: "1",
+      label: <Link to={`/list-taches/${user.code}`}>Liste Tache</Link>,
+      icon: <ListChecks size={18} />,
+    };
+
+    console.log([...itemsMenu, newItem]);
+
+    user.role == "C" && setItemsMenu([...itemsMenu, newItem]);
+    user.role == "EC" && setItemsMenu(items2);
+  }, [user.role]);
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-  const user = useSelector(selectUser);
+
   return (
     <Layout>
       <AppHeader></AppHeader>
@@ -96,7 +137,7 @@ const AppLayout = () => {
                 height: "100%",
                 border: "none",
               }}
-              items={items2}
+              items={itemsMenu.sort((a, b) => Number(a.key) - Number(b.key))}
             />
           </Sider>
           <Content
@@ -108,6 +149,25 @@ const AppLayout = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/comptables" element={<Comptables />} />
+              <Route
+                path="/list-taches/:idClt"
+                element={
+                  <RequireAuth>
+                    <ListTaches />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/archives"
+                element={
+                  <RequireAuth>
+                    <Archives />
+                  </RequireAuth>
+                }
+              />
+              <Route path="/archives/fiscal" element={<ArchiveFisc />} />
+
+              <Route path="/clients/info" element={<InfoClients />} />
               <Route path="/clients/:idCompt" element={<Clients />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/login" element={<Login />} />
@@ -116,6 +176,14 @@ const AppLayout = () => {
                 element={
                   <RequireAuth>
                     <Facture />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="/checklist"
+                element={
+                  <RequireAuth>
+                    <ChecklistPage />
                   </RequireAuth>
                 }
               />
@@ -144,7 +212,7 @@ const AppLayout = () => {
           textAlign: "center",
         }}
       >
-        Ant Design ©{new Date().getFullYear()} Created by Ant UED
+        ESGEN ©{new Date().getFullYear()}
       </Footer>
     </Layout>
   );

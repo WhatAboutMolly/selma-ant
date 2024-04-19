@@ -7,7 +7,6 @@ const AddFacture = () => {
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [file, setFile] = useState({});
 
-  c;
   const showModal = () => {
     setOpen(true);
   };

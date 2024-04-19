@@ -1,8 +1,11 @@
 import React from "react";
-import { comptables } from "../../Data";
+import { useSelector } from "react-redux";
+import { selectAllComptables } from "../features/comptables/comptableSlice";
 import ComptableCrad from "../components/ui/comptableCard";
 
 export default function Comptables() {
+  const comptables = useSelector(selectAllComptables);
+  console.log(comptables);
   return (
     <div className="comptables-container">
       {comptables.map((c) => (

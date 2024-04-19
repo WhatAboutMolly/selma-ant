@@ -10,6 +10,8 @@ import {
 import "../ui.css";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { FilePlus2 } from "lucide-react";
+import { Tooltip } from "react-tooltip";
 
 const { Meta } = Card;
 
@@ -30,6 +32,22 @@ const ComptableCrad = ({ ...props }) => {
         style={{
           width: 240,
         }}
+        actions={[
+          <Link to={`/list-taches/${numeroComptable}`}>
+            <FilePlus2 size="16" id="ajout-icone" />
+            <Tooltip
+              anchorSelect="#ajout-icone"
+              content="Nouvelle tache"
+              place="bottom"
+            />
+          </Link>,
+          <Link to={`/archives/${numeroComptable}`}>
+            <FilePlus2 size="16" />
+          </Link>,
+          <Link to={`/list-taches/${numeroComptable}`}>
+            <FilePlus2 size="16" />
+          </Link>,
+        ]}
       >
         <Meta
           avatar={
