@@ -17,7 +17,8 @@ const beforeUpload = (file) => {
   }
   return isJpgOrPng && isLt2M;
 };
-const UploadImage = () => {
+const UploadImage = ({ ...props }) => {
+  const { field, form } = props;
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState();
 
@@ -29,7 +30,7 @@ const UploadImage = () => {
         setLoading(false);
         getBase64(info.file.originFileObj, (url) => {
           setImageUrl(url);
-          console.log(info.file.name);
+          form.setFieldValue(field, info.file.name);
         });
       }, 2000);
     },

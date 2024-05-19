@@ -2,9 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   G50: [
-    { tache: "tache 1", done: true },
-    { tache: "tache 2", done: false },
-    { tache: "tache 3", done: false },
+    {
+      tache: "Calculer TVA, TAP, IBS, IRG avec les reductions concernées",
+      done: true,
+    },
+    { tache: "Declarer la G50 sur le site JIBAYATIC", done: false },
+    { tache: "Enregistrement comptable de la G50", done: false },
+    { tache: "Enregistrement comptable du reglement de la G50", done: false },
   ],
 };
 

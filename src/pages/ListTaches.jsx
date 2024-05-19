@@ -16,8 +16,8 @@ const ListTaches = () => {
   const user = useSelector(selectUser);
 
   let comptable = comptables.filter((c) => c.numeroComptable == idClt)[0];
-  let copyTache = comptable.listTaches.slice();
-  let taches = copyTache.sort((a, b) =>
+  let copyTache = comptable?.listTaches?.slice();
+  let taches = copyTache?.sort((a, b) =>
     moment(b.date, "DD/MM/YYYY").diff(moment(a.date, "DD/MM/YYYY"))
   );
   console.log(taches);

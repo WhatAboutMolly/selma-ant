@@ -2,6 +2,9 @@ import React, { useRef, useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Button, Input, Space, Table } from "antd";
 import Highlighter from "react-highlight-words";
+import { useSelector } from "react-redux";
+import { getFacture } from "../features/facture/factureSlice";
+
 const data = [
   {
     key: "1",
@@ -22,6 +25,10 @@ const TableFacture = () => {
   const [searchText, setSearchText] = useState("");
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
+
+  const allFacture = useSelector(getFacture);
+  console.log(allFacture);
+
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
     setSearchText(selectedKeys[0]);
@@ -135,25 +142,25 @@ const TableFacture = () => {
   });
   const columns = [
     {
-      title: "Code facture",
-      dataIndex: "codefac",
-      key: "code",
-      width: "30%",
-      ...getColumnSearchProps("codefac"),
-    },
-    {
-      title: "type facture",
-      dataIndex: "type",
-      key: "type",
+      title: "N° Facture",
+      dataIndex: "NumFac",
+      key: "NumFac",
       width: "20%",
-      ...getColumnSearchProps("type"),
+      ...getColumnSearchProps("NumFac"),
     },
     {
-      title: "fournisseur",
-      dataIndex: "fournisseur",
-      key: "fournisseur",
-      ...getColumnSearchProps("fournisseur"),
-      sorter: (a, b) => a.fournisseur.length - b.fournisseur.length,
+      title: "Journaux",
+      dataIndex: "journaux",
+      key: "journaux",
+      width: "15%",
+      ...getColumnSearchProps("journaux"),
+    },
+    {
+      title: "Client / Fournisseur",
+      dataIndex: "clFr",
+      key: "clFr",
+      ...getColumnSearchProps("clFr"),
+      sorter: (a, b) => a.clFr.length - b.clFr.length,
       sortDirections: ["descend", "ascend"],
     },
     {
@@ -164,7 +171,16 @@ const TableFacture = () => {
       sorter: (a, b) => a.date - b.date,
       sortDirections: ["descend", "ascend"],
     },
+    {
+      title: "Fichier",
+      dataIndex: "fichier",
+      key: "fichier",
+      ...getColumnSearchProps("fichier"),
+      render: (text) => (
+        <a href={`http://localhost:8080/Facture/${text}`}>Ouvrir {text}</a>
+      ),
+    },
   ];
-  return <Table columns={columns} dataSource={data} />;
+  return <Table columns={columns} dataSource={allFacture} />;
 };
 export default TableFacture;

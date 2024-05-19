@@ -13,30 +13,53 @@ import { Link } from "react-router-dom";
 const { Meta } = Card;
 
 const ClientCard = ({ ...props }) => {
-  const { title, description, image, email, telephone, numeroClient } = props;
+  const {
+    DeclarationExist,
+    NIF,
+    NIS,
+    Nomclt,
+    contratLoc,
+    description,
+    email,
+    mdpCnas,
+    numTlp,
+    registreComm,
+    statut,
+    imageClient,
+    numeroComptable,
+    idClt,
+  } = props;
   return (
-    <Card
-      hoverable
-      style={{
-        width: 240,
-      }}
-      cover={<img alt="example" src={image} />}
-    >
-      <Meta
-        title={title}
-        description={
-          <div className="card-info">
-            <div>{description}</div>
-            <a href={`mailto:${email}`}>
-              <MailOutlined key="mail" /> {email}
-            </a>
-            <a href={`tel:${telephone}`}>
-              <PhoneOutlined key="edit" /> {telephone}
-            </a>
-          </div>
+    <Link to={`/clients/info/${idClt}`}>
+      <Card
+        hoverable
+        style={{
+          width: 240,
+          color: "#000",
+        }}
+        cover={
+          <img
+            alt="example"
+            src={"/src/assets/Client-info/images/" + imageClient}
+          />
         }
-      />
-    </Card>
+      >
+        <Meta
+          title={Nomclt}
+          description={
+            <div className="card-info">
+              <div>{description}</div>
+              <a href={`mailto:${email}`}>
+                <MailOutlined key="mail" /> {email}
+              </a>
+              <a href={`tel:${numTlp}`}>
+                <PhoneOutlined key="phone" /> {numTlp}
+              </a>
+            </div>
+          }
+        />
+      </Card>
+    </Link>
   );
 };
 export default ClientCard;

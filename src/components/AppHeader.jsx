@@ -22,10 +22,11 @@ export default function AppHeader() {
         mode="horizontal"
         defaultSelectedKeys={["2"]}
         style={{
-          flex: 1,
-          minWidth: 0,
+          minWidth: "100%",
           padding: "0 50px",
           border: "none",
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
         <Menu.Item>
@@ -33,20 +34,7 @@ export default function AppHeader() {
             <span>Logo</span>
           </Link>
         </Menu.Item>
-        {user.role == "EC" && (
-          <Menu.Item>
-            <Link to="/comptables">
-              <span>Profils Comptables</span>
-            </Link>
-          </Menu.Item>
-        )}
-        {user.logged == true && (
-          <Menu.Item>
-            <Link to="/clients">
-              <span>Profils Clients</span>
-            </Link>
-          </Menu.Item>
-        )}
+
         <Menu.Item>
           <DropdownMenu />
         </Menu.Item>

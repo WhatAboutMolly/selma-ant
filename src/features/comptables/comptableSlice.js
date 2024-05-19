@@ -2,12 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    nom: "Jean",
-    prenom: "Dupont",
-    nombreAnneesExperience: 10,
-    age: 35,
-    numeroComptable: "C001",
-    nbClients: 1,
+    NomCmp: "Jean Dupont",
+    dateRuc: "1998-05-22",
+    email: "JeanDupon@gmail.com",
+    idCmp: "C001",
+    numCmp: "0550559056",
     image:
       "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
     listTaches: [
@@ -35,12 +34,11 @@ const initialState = [
     ],
   },
   {
-    nom: "Marie",
-    prenom: "Leblanc",
-    nombreAnneesExperience: 8,
-    age: 40,
-    numeroComptable: "C002",
-    nbClients: 1,
+    NomCmp: "Marie Leblanc",
+    dateRuc: "2006-05-22",
+    email: "MarieLeb@gmail.com",
+    numCmp: "0557884251",
+    idCmp: "C002",
     image:
       "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
   },
@@ -68,9 +66,15 @@ export const comptableSlice = createSlice({
         }
       },
     },
+    AddComptable: {
+      reducer(state, action) {
+        state.push({ ...action.payload });
+        console.log(state);
+      },
+    },
   },
 });
 
-export const { AddTache } = comptableSlice.actions;
+export const { AddTache, AddComptable } = comptableSlice.actions;
 export default comptableSlice.reducer;
 export const selectAllComptables = (state) => state.comptable;

@@ -18,6 +18,24 @@ export const clients = [
     numeroComptable: "C001",
     image: "https://pharmashop-dz.com/img/pharmashopdz--logo-1624489966.jpg",
   },
+  {
+    numeroClient: "CLT002",
+    title: "ParaPharma",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    email: "recipient@example.com",
+    telephone: "+1234567890",
+    numeroComptable: "C001",
+    image: "https://pharmashop-dz.com/img/pharmashopdz--logo-1624489966.jpg",
+  },
+  {
+    numeroClient: "CLT002",
+    title: "ParaPharma",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    email: "recipient@example.com",
+    telephone: "+1234567890",
+    numeroComptable: "C001",
+    image: "https://pharmashop-dz.com/img/pharmashopdz--logo-1624489966.jpg",
+  },
 ];
 
 export const comptables = [

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { UploadOutlined } from "@ant-design/icons";
 import { Button, message, Upload } from "antd";
+import dayjs from "dayjs";
 
-const UploadFileInput = ({ ...props }) => {
+const dateFormatList = ["DD/MM/YYYY"];
+const UploadFacture = ({ ...props }) => {
   const { form, field, enabled } = props;
   const [status, setStatus] = useState(false);
   const [file, setFile] = useState("");
@@ -35,6 +37,27 @@ const UploadFileInput = ({ ...props }) => {
       info.file.status = "done";
       setFile(info.file.name);
       setStatus(true);
+
+      let parts = info.file.name.split("-");
+      let tempdate = parts[parts.length - 1].split(".");
+      let formattedDate = tempdate[2] + "-" + tempdate[1] + "-" + tempdate[0];
+
+      form.setFieldValue("numFac", parts[0].substring(1));
+      form.setFieldValue("frCL", parts[1]);
+
+      console.log(formattedDate);
+
+      form.setFieldValue("dateFac", dayjs(formattedDate));
+
+      let str = parts[0];
+
+      if (str.charAt(0) === "A") {
+        form.setFieldValue("journaux", "Achat");
+      } else if (str.charAt(0) === "V") {
+        form.setFieldValue("journaux", "Vente");
+      } else if (str.charAt(0) === "B") {
+        form.setFieldValue("journaux", "Banque");
+      }
     },
   };
 
@@ -46,4 +69,4 @@ const UploadFileInput = ({ ...props }) => {
     </Upload>
   );
 };
-export default UploadFileInput;
+export default UploadFacture;

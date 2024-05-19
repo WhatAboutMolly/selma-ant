@@ -35,6 +35,8 @@ import InfoClients from "./src/pages/InfoClients";
 import ChecklistPage from "./src/pages/ChecklistPage";
 import Archives from "./src/pages/Archives";
 import ArchiveFisc from "./src/pages/archives/ArchiveFisc";
+import KPI from "./src/pages/KPI";
+import InfoComptable from "./src/pages/infoComptable";
 
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ["1", "2", "3"].map((key) => ({
@@ -97,11 +99,16 @@ const AppLayout = () => {
       label: <Link to={`/list-taches/${user.code}`}>Liste Tache</Link>,
       icon: <ListChecks size={18} />,
     };
+    const newItem2 = {
+      key: "5",
+      label: <Link to={`/KPI`}>KPI</Link>,
+      icon: <CalendarClock size={18} />,
+    };
 
     console.log([...itemsMenu, newItem]);
 
-    user.role == "C" && setItemsMenu([...itemsMenu, newItem]);
-    user.role == "EC" && setItemsMenu(items2);
+    user.role == "C" && setItemsMenu([...items2, newItem]);
+    user.role == "EC" && setItemsMenu([...items2, newItem2]);
   }, [user.role]);
 
   const {
@@ -147,7 +154,14 @@ const AppLayout = () => {
             }}
           >
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route
+                path="/"
+                element={
+                  <RequireAuth>
+                    <HomePage />
+                  </RequireAuth>
+                }
+              />
               <Route path="/comptables" element={<Comptables />} />
               <Route
                 path="/list-taches/:idClt"
@@ -167,7 +181,11 @@ const AppLayout = () => {
               />
               <Route path="/archives/fiscal" element={<ArchiveFisc />} />
 
-              <Route path="/clients/info" element={<InfoClients />} />
+              <Route path="/clients/info/:idClt" element={<InfoClients />} />
+              <Route
+                path="/comptable/info/:idCmp"
+                element={<InfoComptable />}
+              />
               <Route path="/clients/:idCompt" element={<Clients />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/login" element={<Login />} />
@@ -179,14 +197,7 @@ const AppLayout = () => {
                   </RequireAuth>
                 }
               />
-              <Route
-                path="/checklist"
-                element={
-                  <RequireAuth>
-                    <ChecklistPage />
-                  </RequireAuth>
-                }
-              />
+              <Route path="/checklist" element={<ChecklistPage />} />
               <Route
                 path="/dec-fisc"
                 element={

@@ -3,9 +3,22 @@ import "./pages.css";
 import TableFacture from "../components/TableFacture";
 import { Link } from "react-router-dom";
 import { Col } from "antd";
+import { Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/user/userSlice";
 
 export default function HomePage() {
-  return (
+  const user = useSelector(selectUser);
+  const [nextPage, setNextPage] = useState("");
+  useEffect(() => {
+    if (user.role == "EC") {
+      setNextPage(<Navigate to="/comptables"></Navigate>);
+    } else setNextPage(<Navigate to="/clients"></Navigate>);
+  });
+  return nextPage;
+  /*return (
+
     <Col>
       <Link to="/clients">clients</Link>
       <Link to="/comptables">Comptables</Link>
@@ -14,5 +27,5 @@ export default function HomePage() {
       <Link to="/checklist">checkList</Link>
       <Link to="/archives/:idClt">Archive</Link>
     </Col>
-  );
+  );*/
 }

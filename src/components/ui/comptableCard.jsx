@@ -10,30 +10,45 @@ import {
 import "../ui.css";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { FilePlus2 } from "lucide-react";
+import { FilePlus2, BookUser } from "lucide-react";
 import { Tooltip } from "react-tooltip";
+import dayjs from "dayjs";
 
 const { Meta } = Card;
 
 const ComptableCrad = ({ ...props }) => {
   const {
-    nom,
-    prenom,
-    age,
-    nombreAnneesExperience,
-    numeroComptable,
-    image,
-    nbClients,
+    idCmp,
+    NomCmp,
+    imageCmp,
+    email,
+    numCmp,
+    adresse,
+    dateNais,
+    dateRuc,
+    carteId,
+    etxraitNais,
+    ficheFam,
+    residence,
+    chifa,
+    groupage,
+    contrat,
+    rip,
+    cv,
   } = props;
+  const currentDate = dayjs();
+
+  const nombreAnneesExperience = currentDate.diff(dayjs(dateRuc), "year");
   return (
-    <Link to={`/clients/${numeroComptable}`}>
+    <Link to={`/clients/${idCmp}`}>
       <Card
         hoverable
         style={{
           width: 240,
+          color: "#000 !important",
         }}
         actions={[
-          <Link to={`/list-taches/${numeroComptable}`}>
+          <Link to={`/list-taches/${idCmp}`}>
             <FilePlus2 size="16" id="ajout-icone" />
             <Tooltip
               anchorSelect="#ajout-icone"
@@ -41,11 +56,13 @@ const ComptableCrad = ({ ...props }) => {
               place="bottom"
             />
           </Link>,
-          <Link to={`/archives/${numeroComptable}`}>
-            <FilePlus2 size="16" />
-          </Link>,
-          <Link to={`/list-taches/${numeroComptable}`}>
-            <FilePlus2 size="16" />
+          <Link to={`/comptable/info/${idCmp}`}>
+            <BookUser size="16" id="Info-comptable" />
+            <Tooltip
+              anchorSelect="#Info-comptable"
+              content="Information comptable"
+              place="bottom"
+            />
           </Link>,
         ]}
       >
@@ -53,18 +70,16 @@ const ComptableCrad = ({ ...props }) => {
           avatar={
             <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
           }
-          title={nom + " " + prenom}
+          title={NomCmp}
           description={
             <div className="card-info">
-              <div>
-                {nombreAnneesExperience > 10
-                  ? "Comptable Senior"
-                  : "Comptable Junior"}
-              </div>
-              <div>
-                <p>{age} ans</p>
-                <p>{nbClients} clients</p>
-              </div>
+              <div>{adresse}</div>
+              <a href={`mailto:${email}`}>
+                <MailOutlined key="mail" /> {email}
+              </a>
+              <a href={`tel:${numCmp}`}>
+                <PhoneOutlined key="phone" /> {numCmp}
+              </a>
             </div>
           }
         />

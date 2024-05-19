@@ -11,6 +11,8 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
+          colorBgBase: "#e6f4ff",
+          fontFamily: "Poppins , sans-serif",
           // Seed Token
           /*colorPrimary: "#5273e0",
           fontFamily: "Poppins , sans-serif",
@@ -27,7 +29,7 @@ function App() {
           controlItemBgActive: "rgb(30, 41, 59)",
           colorBgTextHover: "rgb(30, 41, 59)",*/
         },
-        algorithm: theme.darkAlgorithm,
+        //algorithm: theme.darkAlgorithm,
       }}
     >
       <AppLayout />

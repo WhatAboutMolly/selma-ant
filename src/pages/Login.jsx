@@ -6,30 +6,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { UpdateUser } from "../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
+const users = [
+  { code: "EC001", username: "EC_Selma", role: "EC" },
+  { code: "EC002", username: "EC_Moukhtaria", role: "EC" },
+  { code: "C001", username: "C_Lina", role: "C" },
+  { code: "C002", username: "C_Amine", role: "C" },
+];
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
-    if (values.username.startsWith("EC_") && values.password == "password") {
-      dispatch(
-        UpdateUser({ logged: true, role: "EC", username: values.username })
-      );
-      navigate("/comptables");
-    } else if (
-      values.username.startsWith("C_") &&
-      values.password == "password"
-    ) {
+    const myUser = users.filter((user) => user.username == values.username);
+    console.log(myUser);
+    if (myUser[0] && values.password == "password") {
       dispatch(
         UpdateUser({
           logged: true,
-          role: "C",
-          username: values.username,
-          code: "C001",
+          role: myUser[0].role,
+          username: myUser[0].username,
+          code: myUser[0].code,
         })
       );
-      navigate("/clients");
+      myUser[0].role == "EC" ? navigate("/comptables") : navigate("/clients");
     }
   };
   return (

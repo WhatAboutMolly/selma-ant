@@ -11,11 +11,22 @@
   text-overflow: ellipsis;
 }
 .notes-month {
-  font-size: 28px;
+  font-size: 18px;
   text-align: center;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.notes-month section {
-  font-size: 28px;
+.notes-month.retard {
+  background-color: #ff030377;
+}
+
+.notes-month.realise {
+  background-color: #18ff0377;
+}
+.notes-month.almost {
+  background-color: #ff740377;
 }
 
 .card-info {
