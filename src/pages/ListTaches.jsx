@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, List } from "antd";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ListChecks } from "lucide-react";
 import AddTacheForm from "../components/AddTache";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ const ListTaches = () => {
   const comptables = useSelector(selectAllComptables);
   const user = useSelector(selectUser);
 
-  let comptable = comptables.filter((c) => c.numeroComptable == idClt)[0];
+  let comptable = comptables.filter((c) => c.idCmp == idClt)[0];
   let copyTache = comptable?.listTaches?.slice();
   let taches = copyTache?.sort((a, b) =>
     moment(b.date, "DD/MM/YYYY").diff(moment(a.date, "DD/MM/YYYY"))
@@ -23,9 +23,7 @@ const ListTaches = () => {
   console.log(taches);
   return (
     <>
-      {user.role == "EC" && (
-        <FormModal numeroComptable={comptable.numeroComptable} />
-      )}
+      {user.role == "EC" && <FormModal numeroComptable={comptable.idCmp} />}
       <List
         itemLayout="vertical"
         size="large"
@@ -33,7 +31,7 @@ const ListTaches = () => {
         renderItem={(item, index) => (
           <List.Item
             extra={
-              <a href={`http://localhost:8080/${item.fichier}`}>
+              <a href={`http://localhost:8080/List-tache/${item.fichier}`}>
                 <ListChecks />
               </a>
             }
@@ -44,7 +42,7 @@ const ListTaches = () => {
                   src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`}
                 />
               }
-              title={<a href="https://ant.design">{item.par}</a>}
+              title={<Link to={`/comptable/info/${idClt}`}>{item.par}</Link>}
               description={item.date}
             />
             {item.description}

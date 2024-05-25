@@ -41,6 +41,7 @@ const initialState = [
     idCmp: "C002",
     image:
       "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
+    listTaches: [],
   },
 ];
 
@@ -51,8 +52,7 @@ export const comptableSlice = createSlice({
     AddTache: {
       reducer(state, action) {
         const index = state.findIndex(
-          (comptable) =>
-            comptable.numeroComptable === action.payload.numeroComptable
+          (comptable) => comptable.idCmp === action.payload.numeroComptable
         );
         if (index !== -1) {
           console.log(action.payload);

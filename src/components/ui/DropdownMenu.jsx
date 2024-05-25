@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const items = [
   {
-    label: <Link to="/login">Deconnecter</Link>,
+    label: <Link to="/">Deconnecter</Link>,
     key: "0",
   },
   {
@@ -31,7 +31,7 @@ const DropdownMenu = () => {
           </Space>
         </a>
       ) : (
-        <Link to="/login">Login</Link>
+        <Link to="/">Login</Link>
       )}
     </Dropdown>
   );

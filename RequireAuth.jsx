@@ -12,7 +12,7 @@ export default function RequireAuth(props) {
     if (user.logged) {
       console.log("we r logged");
       setNextPage(props.children);
-    } else setNextPage(<Navigate to="/login"></Navigate>);
+    } else setNextPage(<Navigate to="/"></Navigate>);
   });
 
   return nextPage;

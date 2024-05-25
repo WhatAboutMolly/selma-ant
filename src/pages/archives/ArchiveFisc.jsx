@@ -47,7 +47,7 @@ const columns = [
     dataIndex: "fichier",
     key: "fichier",
     render: (text) => (
-      <a href={`http://localhost:8080/${text}`}>ouvrir {text}</a>
+      <a href={`http://localhost:8080/Dec-fisc/${text}`}>ouvrir {text}</a>
     ),
   },
 ];

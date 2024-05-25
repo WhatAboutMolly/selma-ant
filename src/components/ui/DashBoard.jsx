@@ -10,7 +10,7 @@ const data = [
     mois: "Juillet",
     annee: 2024,
     client: "HP",
-    fichier: "G50 FEV2022.xls",
+    fichier: "G50 FEV2022.xlsx",
   },
   {
     key: "2",
@@ -18,7 +18,7 @@ const data = [
     mois: "Janvier",
     annee: 2022,
     client: "BIO pharma",
-    fichier: "G50 MAI2022.xls",
+    fichier: "G50 MAI2022.xlsx",
   },
   {
     key: "3",
@@ -26,7 +26,7 @@ const data = [
     mois: "Mars",
     annee: 2022,
     client: "BIO pharma",
-    fichier: "G50 MARS2022.xls",
+    fichier: "G50 MARS2022.xlsx",
   },
 ];
 

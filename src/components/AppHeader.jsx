@@ -1,15 +1,38 @@
 import React from "react";
-import { Layout, Menu, Space, Flex } from "antd";
+import { Layout, Menu, Space, Flex, Dropdown, Button } from "antd";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./ui/DropdownMenu";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";
+import { DownOutlined } from "@ant-design/icons";
 const { Header } = Layout;
-
+import "./ui.css";
+const menu = (
+  <Menu>
+    <Menu.Item key="1">
+      <a href="/parameters">Parameters</a>
+    </Menu.Item>
+    <Menu.Item key="2">
+      <a href="/logout">Logout</a>
+    </Menu.Item>
+  </Menu>
+);
 export default function AppHeader() {
   const user = useSelector(selectUser);
   return (
-    <Header
+    <Header className="header">
+      <div className="logo">
+        <img src="./src/assets/logo/simplex.png" alt="Logo" />
+      </div>
+      <div className="menu">
+        <DropdownMenu />
+      </div>
+    </Header>
+  );
+}
+
+{
+  /*<Header
       style={{
         display: "flex",
         alignItems: "center",
@@ -17,6 +40,9 @@ export default function AppHeader() {
       }}
     >
       <div className="demo-logo" />
+      <Link to="/">
+        <img src="./src/assets/logo/simplex.png" id="logo" />
+      </Link>
       <Menu
         theme="light"
         mode="horizontal"
@@ -30,15 +56,9 @@ export default function AppHeader() {
         }}
       >
         <Menu.Item>
-          <Link to="/">
-            <span>Logo</span>
-          </Link>
-        </Menu.Item>
-
-        <Menu.Item>
           <DropdownMenu />
         </Menu.Item>
       </Menu>
     </Header>
-  );
+      */
 }

@@ -12,6 +12,7 @@ import {
 import {
   createBrowserRouter,
   Link,
+  Outlet,
   Route,
   RouterProvider,
   Routes,
@@ -20,7 +21,6 @@ import { useSelector } from "react-redux";
 import { selectUser } from "./src/features/user/userSlice";
 
 import { Breadcrumb, Layout, Menu, theme } from "antd";
-import AppRoutes from "./AppRoutes";
 import Login from "./src/pages/Login";
 import Facture from "./src/pages/Facture";
 import DeclFisc from "./src/pages/DeclFisc";
@@ -37,6 +37,7 @@ import Archives from "./src/pages/Archives";
 import ArchiveFisc from "./src/pages/archives/ArchiveFisc";
 import KPI from "./src/pages/KPI";
 import InfoComptable from "./src/pages/infoComptable";
+import Acceuil from "./src/pages/Acceuil";
 
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ["1", "2", "3"].map((key) => ({
@@ -53,7 +54,7 @@ function getItem(label, key, icon, children) {
 }
 
 let items2 = [
-  { key: "0", icon: <Home size={18} />, label: <Link to="/">Home</Link> },
+  { key: "0", icon: <Home size={18} />, label: <Link to="/home">Home</Link> },
   {
     key: "2",
     icon: <FileStack size={18} />,
@@ -101,7 +102,7 @@ const AppLayout = () => {
     };
     const newItem2 = {
       key: "5",
-      label: <Link to={`/KPI`}>KPI</Link>,
+      label: <Link to={`/kpi`}>KPI</Link>,
       icon: <CalendarClock size={18} />,
     };
 
@@ -118,6 +119,7 @@ const AppLayout = () => {
   return (
     <Layout>
       <AppHeader></AppHeader>
+
       <Content
         style={{
           padding: "24px 48px",
@@ -153,68 +155,7 @@ const AppLayout = () => {
               minHeight: 280,
             }}
           >
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <RequireAuth>
-                    <HomePage />
-                  </RequireAuth>
-                }
-              />
-              <Route path="/comptables" element={<Comptables />} />
-              <Route
-                path="/list-taches/:idClt"
-                element={
-                  <RequireAuth>
-                    <ListTaches />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/archives"
-                element={
-                  <RequireAuth>
-                    <Archives />
-                  </RequireAuth>
-                }
-              />
-              <Route path="/archives/fiscal" element={<ArchiveFisc />} />
-
-              <Route path="/clients/info/:idClt" element={<InfoClients />} />
-              <Route
-                path="/comptable/info/:idCmp"
-                element={<InfoComptable />}
-              />
-              <Route path="/clients/:idCompt" element={<Clients />} />
-              <Route path="/clients" element={<Clients />} />
-              <Route path="/login" element={<Login />} />
-              <Route
-                path="/facture"
-                element={
-                  <RequireAuth>
-                    <Facture />
-                  </RequireAuth>
-                }
-              />
-              <Route path="/checklist" element={<ChecklistPage />} />
-              <Route
-                path="/dec-fisc"
-                element={
-                  <RequireAuth>
-                    <DeclFisc />
-                  </RequireAuth>
-                }
-              />
-              <Route
-                path="/dec-para-fisc"
-                element={
-                  <RequireAuth>
-                    <DeclParaFisc />
-                  </RequireAuth>
-                }
-              />
-            </Routes>
+            <Outlet />
           </Content>
         </Layout>
       </Content>

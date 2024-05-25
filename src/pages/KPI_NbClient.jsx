@@ -4,15 +4,30 @@ import { Col, Row } from "antd";
 import Chart from "chart.js/auto";
 import { getArchive } from "../features/archive/archiveSlice";
 import { selectAllComptables } from "../features/comptables/comptableSlice";
-import KPI_retard from "./KPI_retard";
-import KPI_NbClient from "./KPI_NbClient";
-import KPI_Profit from "./KPI_Profit";
+import { users } from "../../Data";
 
-function KPI() {
+export default function KPI_NbClient() {
   const comptables = useSelector(selectAllComptables);
+  const archives = useSelector(getArchive);
 
-  const labels = comptables.map((c) => c.nom + " " + c.prenom);
-  const values = comptables.map((c) => c.nbClients);
+  const tempComp = users.filter((c) => c.role === "C");
+
+  const clientCounts = {};
+  archives.forEach(({ comptable, client }) => {
+    if (!clientCounts[comptable]) {
+      clientCounts[comptable] = new Set();
+    }
+    clientCounts[comptable].add(client);
+  });
+
+  console.log(clientCounts);
+
+  const labels = tempComp.map((c) => c.nom);
+  const tempvalues = Object.values(clientCounts);
+  const values = tempvalues.map((v) => v.size);
+
+  console.log(values);
+
   const data = {
     labels: labels,
     datasets: [
@@ -20,8 +35,8 @@ function KPI() {
         label: "Nombre de client par comptable",
         data: values,
         backgroundColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(255, 159, 64, 1)",
+          "#094074",
+          "#772F1A",
           "rgba(255, 205, 86, 1)",
           "rgba(75, 192, 192, 1)",
           "rgba(54, 162, 235, 1)",
@@ -29,8 +44,8 @@ function KPI() {
           "rgba(201, 203, 207, 1)",
         ],
         borderColor: [
-          "rgb(255, 99, 132)",
-          "rgb(255, 159, 64)",
+          "#094074",
+          "#772F1A",
           "rgb(255, 205, 86)",
           "rgb(75, 192, 192)",
           "rgb(54, 162, 235)",
@@ -42,9 +57,19 @@ function KPI() {
     ],
   };
   const config = {
-    type: "bar",
+    type: "doughnut",
     data: data,
     options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: "Nombre de client par comptable",
+          position: "bottom",
+        },
+      },
       scales: {
         y: {
           ticks: {
@@ -61,13 +86,18 @@ function KPI() {
     },
   };
 
+  useEffect(() => {
+    // Get the canvas element
+    const ctx = document.getElementById("myChart2").getContext("2d");
+    const myChart = new Chart(ctx, config);
+    return () => {
+      myChart.destroy();
+    };
+  }, [users]);
+
   return (
-    <Row gutter={40}>
-      <KPI_retard />
-      <KPI_NbClient />
-      <KPI_Profit />
-    </Row>
+    <Col span={8}>
+      <canvas id="myChart2" width="150" height="150"></canvas>
+    </Col>
   );
 }
-
-export default KPI;

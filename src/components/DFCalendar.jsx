@@ -15,7 +15,7 @@ const getMonthData = (value, G50) => {
       console.log(dec_mois[0].jour);
       if (dec_mois[0].jour > 20)
         return { etat: "retard", jour: dec_mois[0].jour - 20 };
-      else return { etat: "realisé" };
+      else return { etat: "realisé", jour: 0 };
     } else return { etat: "non realisé" };
   } else if (value.month() === currentMonth) {
     const dec_mois = G50.filter((dec) => dec.mois === value.month());
@@ -24,7 +24,8 @@ const getMonthData = (value, G50) => {
     else {
       const currentDay = currentDate.getDate();
       console.log(currentDay);
-      if (currentDay > 20) return { etat: "retard", jour: currentDay - 20 };
+      if (currentDay > 20)
+        return { etat: "non realisé", jour: currentDay - 20 };
       else if (currentDay > 15 && currentDay <= 20)
         return { etat: "almost", jour: 20 - currentDay };
       else return { etat: "realisé" };
@@ -41,8 +42,8 @@ const DFCalendar = () => {
     console.log(value.month(), result);
     if (result.etat === "non realisé")
       return (
-        <div className="notes-month">
-          <span>Non Realisé</span>
+        <div className="notes-month nonR">
+          <span>Retard {result.jour} jours</span>
         </div>
       );
     if (result.etat === "realisé")

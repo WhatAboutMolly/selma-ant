@@ -83,3 +83,10 @@ export const comptables = [
       "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
   },
 ];
+
+export const users = [
+  { code: "EC001", username: "EC_Selma", role: "EC", nom: "Selma Allouche" },
+  { code: "EC002", username: "EC_Moukhtaria", role: "EC", nom: "Moukhtaria" },
+  { code: "C001", username: "C_Lina", role: "C", nom: "Lina Benhammouda" },
+  { code: "C002", username: "C_Amine", role: "C", nom: "Amine Zerine" },
+];

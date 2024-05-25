@@ -25,3 +25,53 @@
   display: flex;
   gap: 20px;
 }
+
+/*acueil*/
+.carousel-content {
+  position: absolute;
+  width: 80%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #000000;
+  display: flex;
+  gap: 20%;
+  align-items: center;
+}
+
+.carousel-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.blur-background {
+  backdrop-filter: blur(5px);
+  background: rgba(59, 49, 202, 0.247); /* Semi-transparent background */
+  padding: 10px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+/* login*/
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main page */
+.mainPage {
+  display: flex;
+}
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+.loginPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  width: 250px;
+}

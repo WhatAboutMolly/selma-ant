@@ -25,7 +25,7 @@ const CollectionCreateForm = ({ onFormInstanceReady }) => {
           },
         ]}
       >
-        <UploadFileInput form={form} enabled={true} />
+        <UploadFileInput form={form} enabled={true} field="fichier" />
       </Form.Item>
       <Form.Item name="remarque" label="Remarque">
         <TextArea rows={3} placeholder="Remarque ..." />
@@ -84,7 +84,7 @@ const FormModal = ({ ...props }) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const onCreate = (values) => {
-    //console.log("Received values of form: ", values);
+    console.log("Received values of form: ", values);
     setConfirmLoading(true);
     dispatch(
       AddTache({

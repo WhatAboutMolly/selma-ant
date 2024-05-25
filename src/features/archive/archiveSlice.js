@@ -23,10 +23,10 @@ const initialState = [
     comptable: "C001",
     client: "HP",
     declaration: "G50",
-    jour: 15,
+    jour: 25,
     mois: 2,
     annee: 2024,
-    fichier: "G50/HP MARS2022.xls",
+    fichier: "G50/HP MARS2022.xlsx",
   },
   {
     comptable: "C001",
@@ -36,6 +36,24 @@ const initialState = [
     mois: 3,
     annee: 2024,
     fichier: "G50/BioPharma AVR2022.xls",
+  },
+  {
+    comptable: "C002",
+    client: "BioPharma",
+    declaration: "G50",
+    jour: 22,
+    mois: 0,
+    annee: 2024,
+    fichier: "G50/BioPharma JAN2022.xls",
+  },
+  {
+    comptable: "C002",
+    client: "BioPharma",
+    declaration: "G50",
+    jour: 15,
+    mois: 1,
+    annee: 2024,
+    fichier: "G50/BioPharma JAN2022.xls",
   },
 ];
 

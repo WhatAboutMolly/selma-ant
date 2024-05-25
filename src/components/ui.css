@@ -19,14 +19,18 @@
   align-items: center;
 }
 .notes-month.retard {
-  background-color: #ff030377;
+  background-color: #ff9a0391;
 }
 
 .notes-month.realise {
   background-color: #18ff0377;
 }
 .notes-month.almost {
-  background-color: #ff740377;
+  background-color: #0385ff77;
+}
+
+.notes-month.nonR {
+  background-color: #ff030377;
 }
 
 .card-info {
@@ -51,4 +55,26 @@
 .ant-card-meta-avatar img {
   height: 100%;
   width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  background: #ffffff;
+}
+
+.logo img {
+  height: 87px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
 }
