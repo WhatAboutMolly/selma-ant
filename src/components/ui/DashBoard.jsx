@@ -2,6 +2,23 @@ import React, { useRef, useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Button, Input, Space, Table } from "antd";
 import Highlighter from "react-highlight-words";
+import { getArchive } from "../../features/archive/archiveSlice";
+import { useSelector } from "react-redux";
+
+const tousLesMois = [
+  "Janvier",
+  "Février",
+  "Mars",
+  "Avril",
+  "Mai",
+  "Juin",
+  "Juillet",
+  "Août",
+  "Septembre",
+  "Octobre",
+  "Novembre",
+  "Décembre",
+];
 
 const data = [
   {
@@ -35,6 +52,11 @@ const DashBoard = ({ columns }) => {
   const [searchedColumn, setSearchedColumn] = useState("");
   const searchInput = useRef(null);
 
+  var allArchive = useSelector(getArchive);
+  let updatedData = allArchive.map((obj) => ({
+    ...obj,
+    mois: tousLesMois[obj.mois], // Subtract 1 to get the correct index
+  }));
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
     setSearchText(selectedKeys[0]);
@@ -160,6 +182,6 @@ const DashBoard = ({ columns }) => {
   });
   console.log(allColumns);
 
-  return <Table columns={allColumns} dataSource={data} />;
+  return <Table columns={allColumns} dataSource={updatedData} />;
 };
 export default DashBoard;

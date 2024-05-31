@@ -24,6 +24,7 @@ const Login = () => {
           role: myUser[0].role,
           username: myUser[0].username,
           code: myUser[0].code,
+          nom: myUser[0].nom,
         })
       );
       myUser[0].role == "EC" ? navigate("/comptables") : navigate("/clients");

@@ -19,6 +19,8 @@ import HomePage from "./pages/Home";
 import RequireAuth from "../RequireAuth";
 import Clients from "./pages/Clients";
 import Comptables from "./pages/Comptables";
+import ArchiveFacture from "./pages/archives/ArchiveFacture";
+import ArchiveRelevBnq from "./pages/archives/ArchiveRelevBnq";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -66,7 +68,7 @@ function App() {
           />
           <Route path="/comptables" element={<Comptables />} />
           <Route
-            path="/list-taches/:idClt"
+            path="/list-taches/:idCmp"
             element={
               <RequireAuth>
                 <ListTaches />
@@ -81,12 +83,47 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route path="/archives/fiscal" element={<ArchiveFisc />} />
+          <Route
+            path="/archives/fiscal"
+            element={
+              <RequireAuth>
+                <ArchiveFisc />
+              </RequireAuth>
+            }
+          />
 
-          <Route path="/clients/info/:idClt" element={<InfoClients />} />
-          <Route path="/comptable/info/:idCmp" element={<InfoComptable />} />
-          <Route path="/clients/:idCompt" element={<Clients />} />
-          <Route path="/clients" element={<Clients />} />
+          <Route
+            path="/clients/info/:idClt"
+            element={
+              <RequireAuth>
+                <InfoClients />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/comptable/info/:idCmp"
+            element={
+              <RequireAuth>
+                <InfoComptable />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/clients/:idCompt"
+            element={
+              <RequireAuth>
+                <Clients />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/clients"
+            element={
+              <RequireAuth>
+                <Clients />
+              </RequireAuth>
+            }
+          />
 
           <Route
             path="/facture"
@@ -96,7 +133,14 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route path="/checklist" element={<ChecklistPage />} />
+          <Route
+            path="/checklist"
+            element={
+              <RequireAuth>
+                <ChecklistPage />
+              </RequireAuth>
+            }
+          />
           <Route
             path="/dec-fisc"
             element={
@@ -119,6 +163,23 @@ function App() {
             element={
               <RequireAuth>
                 <KPI />
+              </RequireAuth>
+            }
+          />
+
+          <Route
+            path="/archives/facture"
+            element={
+              <RequireAuth>
+                <ArchiveFacture />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/archives/relevBnq"
+            element={
+              <RequireAuth>
+                <ArchiveRelevBnq />
               </RequireAuth>
             }
           />

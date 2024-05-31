@@ -29,74 +29,74 @@ export default function InfoComptable() {
     <Flex justify="space-between">
       <Descriptions title="Information Comptable" column={2}>
         <Descriptions.Item label="Nom Comptable">
-          {myComptable.NomCmp}
+          {myComptable?.NomCmp}
         </Descriptions.Item>
         <Descriptions.Item label="Addresse">
-          {myComptable.adresse}
+          {myComptable?.adresse}
         </Descriptions.Item>
         <Descriptions.Item label={"Email"}>
-          {<a href={`mailto:${myComptable.email}`}>{myComptable.email}</a>}
+          {<a href={`mailto:${myComptable?.email}`}>{myComptable?.email}</a>}
         </Descriptions.Item>
         <Descriptions.Item label="Numero Telephone">
-          {myComptable.numCmp}
+          {myComptable?.numCmp}
         </Descriptions.Item>
         <Descriptions.Item label="Date de naissance">
-          {myComptable.dateNais}
+          {myComptable?.dateNais}
         </Descriptions.Item>
         <Descriptions.Item label="Date de recrutement">
-          {myComptable.dateRuc}
+          {myComptable?.dateRuc}
         </Descriptions.Item>
         <Descriptions.Item label="Carte d'identité">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.carteId}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.carteId}`}
             >
-              <FileWordOutlined /> {myComptable.carteId}
+              <FileWordOutlined /> {myComptable?.carteId}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Extrait de naissance">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.etxraitNais}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.etxraitNais}`}
             >
-              <FileWordOutlined /> {myComptable.etxraitNais}
+              <FileWordOutlined /> {myComptable?.etxraitNais}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Fiche familiale">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.ficheFam}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.ficheFam}`}
             >
-              <FileWordOutlined /> {myComptable.ficheFam}
+              <FileWordOutlined /> {myComptable?.ficheFam}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Residence">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.residence}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.residence}`}
             >
-              <FileWordOutlined /> {myComptable.residence}
+              <FileWordOutlined /> {myComptable?.residence}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Carte CHIFA">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.chifa}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.chifa}`}
             >
-              <FileWordOutlined /> {myComptable.chifa}
+              <FileWordOutlined /> {myComptable?.chifa}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Carte de groupage">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.groupage}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.groupage}`}
             >
-              <FileWordOutlined /> {myComptable.groupage}
+              <FileWordOutlined /> {myComptable?.groupage}
             </a>
           }
         </Descriptions.Item>
@@ -104,23 +104,25 @@ export default function InfoComptable() {
         <Descriptions.Item label="Contrat de travail">
           {
             <a
-              href={`http://localhost:8080/comptable-info/${myComptable.contrat}`}
+              href={`http://localhost:8080/comptable-info/${myComptable?.contrat}`}
             >
-              <FileWordOutlined /> {myComptable.contrat}
+              <FileWordOutlined /> {myComptable?.contrat}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="RIP">
           {
-            <a href={`http://localhost:8080/comptable-info/${myComptable.rip}`}>
-              <FileWordOutlined /> {myComptable.rip}
+            <a
+              href={`http://localhost:8080/comptable-info/${myComptable?.rip}`}
+            >
+              <FileWordOutlined /> {myComptable?.rip}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="CV">
           {
-            <a href={`http://localhost:8080/comptable-info/${myComptable.cv}`}>
-              <FileWordOutlined /> {myComptable.cv}
+            <a href={`http://localhost:8080/comptable-info/${myComptable?.cv}`}>
+              <FileWordOutlined /> {myComptable?.cv}
             </a>
           }
         </Descriptions.Item>
@@ -128,7 +130,7 @@ export default function InfoComptable() {
 
       <img
         alt="logo"
-        src={"/src/assets/Client-info/images/" + myComptable.imageClient}
+        src={"/src/assets/Client-info/images/" + myComptable?.imageClient}
       />
     </Flex>
   );

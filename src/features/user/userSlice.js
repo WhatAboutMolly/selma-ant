@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { logged: false, role: "", username: "", code: "" };
+const initialState = {
+  logged: false,
+  role: "",
+  username: "",
+  code: "",
+  nom: "",
+};
 
 export const userSlice = createSlice({
   name: "user",
@@ -13,6 +19,7 @@ export const userSlice = createSlice({
         state.username = action.payload.username;
         state.role = action.payload.role;
         state.code = action.payload.code;
+        state.nom = action.payload.nom;
       },
     },
   },

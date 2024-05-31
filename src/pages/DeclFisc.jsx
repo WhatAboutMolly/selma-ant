@@ -9,32 +9,32 @@ export default function DeclFisc() {
         <Row gutter={16}>
           <Col>
             <Select
-              defaultValue="Lina Benhammouda"
+              defaultValue="Ould Ahmed Islam"
               style={{
                 width: 200,
               }}
               options={[
                 {
-                  value: "Lina Benhammouda",
-                  label: "Lina Benhammouda",
+                  value: "Ould Ahmed Islam",
+                  label: "Ould Ahmed Islam",
                 },
                 {
-                  value: "Amine Zerine",
-                  label: "Amine Zerine",
+                  value: "Medjaled Hind",
+                  label: "Medjaled Hind",
                 },
               ]}
             />
           </Col>
           <Col>
             <Select
-              defaultValue="HP"
+              defaultValue="Superette les frères Belkacemi"
               style={{
-                width: 200,
+                width: 300,
               }}
               options={[
                 {
-                  value: "HP",
-                  label: "HP",
+                  value: "Superette les frères Belkacemi",
+                  label: "Superette les frères Belkacemi",
                 },
               ]}
             />

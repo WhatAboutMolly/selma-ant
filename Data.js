@@ -87,6 +87,6 @@ export const comptables = [
 export const users = [
   { code: "EC001", username: "EC_Selma", role: "EC", nom: "Selma Allouche" },
   { code: "EC002", username: "EC_Moukhtaria", role: "EC", nom: "Moukhtaria" },
-  { code: "C001", username: "C_Lina", role: "C", nom: "Lina Benhammouda" },
-  { code: "C002", username: "C_Amine", role: "C", nom: "Amine Zerine" },
+  { code: "C001", username: "C_Islam", role: "C", nom: "Ould Ahmed Islam" },
+  { code: "C002", username: "C_Hind", role: "C", nom: "Medjaled Hind" },
 ];

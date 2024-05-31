@@ -66,7 +66,7 @@
 }
 
 .logo img {
-  height: 87px;
+  height: 75px;
 }
 .logo {
   display: flex;
@@ -77,4 +77,11 @@
 .menu {
   display: flex;
   align-items: center;
+}
+
+.info-compt {
+  color: #000;
+}
+.add-button {
+  margin-bottom: 30px;
 }

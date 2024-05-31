@@ -2,46 +2,28 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    NomCmp: "Jean Dupont",
-    dateRuc: "1998-05-22",
-    email: "JeanDupon@gmail.com",
+    NomCmp: "Ould Ahmed Islam",
+    dateRuc: "2022-12-23",
+    email: "OuldAhmd@gmail.com",
     idCmp: "C001",
-    numCmp: "0550559056",
-    image:
-      "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
-    listTaches: [
-      {
-        fichier: "D:download/fact.xlsx",
-        par: "EC_Farah",
-        date: "20/03/2024",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta vitae nunc sit amet viverra. Vivamus porta, mi lobortis semper rhoncus, magna justo pellentesque tortor",
-      },
-      {
-        fichier: "D:download/fact.xlsx",
-        par: "EC_Farah",
-        date: "10/03/2024",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta vitae nunc sit amet viverra. Vivamus porta, mi lobortis semper rhoncus, magna justo pellentesque tortor",
-      },
-      {
-        fichier: "D:download/fact.xlsx",
-        par: "EC_Farah",
-        date: "06/03/2024",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porta vitae nunc sit amet viverra. Vivamus porta, mi lobortis semper rhoncus, magna justo pellentesque tortor",
-      },
-    ],
+    numCmp: "0550 55 90 56",
+    imageCmp: "islam.jpg",
+    listTaches: [],
+    adresse: "Cité 1500 Log, Batiment 115, Plateau sud- Ouled Fayet",
+    etxraitNais: "extr-Naiss.jpg",
+    residence: "residence-1.jpg",
   },
   {
-    NomCmp: "Marie Leblanc",
-    dateRuc: "2006-05-22",
-    email: "MarieLeb@gmail.com",
-    numCmp: "0557884251",
+    NomCmp: "Medjaled Hind",
+    dateRuc: "2023-02-12",
+    email: "HindMedjd@gmail.com",
+    numCmp: "0557 88 42 51",
     idCmp: "C002",
-    image:
-      "https://yt3.googleusercontent.com/Q5PUjPzQ1-xtUCDaNgDo06CBrVTuIdzG-P3UaWWtn8MoScXAcsW89-TYBLjuhTyAXpIgFZRPmg=s900-c-k-c0x00ffffff-no-rj",
+    imageCmp: "hind.jpg",
     listTaches: [],
+    adresse: "Rue 27 Bouchaoui Oumar, Batiment 35- Ouled Fayet",
+    etxraitNais: "extr-Naiss-2.jpg",
+    contrat: "contrat-1.jpg",
   },
 ];
 

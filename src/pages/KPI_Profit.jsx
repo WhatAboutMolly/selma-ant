@@ -8,27 +8,27 @@ import { users } from "../../Data";
 
 export default function KPI_Profit() {
   const archives = useSelector(getArchive);
-  var HP = 0;
-  var BioPharma = 0;
+  var Belkacemi = 0;
+  var Beciri = 0;
   archives.forEach((a) => {
-    if (a.client == "HP" && a.annee == "2024") HP++;
-    if (a.client == "BioPharma" && a.annee == "2024") BioPharma++;
+    if (a.client == "Belkacemi" && a.annee == "2024") Belkacemi++;
+    if (a.client == "Beciri" && a.annee == "2024") Beciri++;
   });
   var data = {
     labels: ["2020", "2021", "2022", "2023", "2024"],
     datasets: [
       {
-        label: "HP",
+        label: "Belkacemi",
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
-        data: [25, 30, 32, 35, HP],
+        data: [25, 30, 32, 35, Belkacemi],
         fill: false,
       },
       {
-        label: "Biopharma",
+        label: "Beciri",
         backgroundColor: "rgb(54, 162, 235)",
         borderColor: "rgb(54, 162, 235)",
-        data: [10, 15, 11, 13, BioPharma],
+        data: [10, 15, 11, 13, Beciri],
         fill: false,
       },
     ],
@@ -43,7 +43,7 @@ export default function KPI_Profit() {
         },
         title: {
           display: true,
-          text: "Nombre de client par comptable",
+          text: "Répartition des clients par fréquence de collaboration",
           position: "bottom",
         },
       },

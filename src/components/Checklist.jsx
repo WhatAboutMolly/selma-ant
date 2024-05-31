@@ -48,9 +48,9 @@ const Checklist = ({ ...props }) => {
       addArchive({
         fichier: "TacheFichier/Tache1.xlsx",
         comptable: "Ec_Selma",
-        client: "Biopharma",
-        date: "23/03/2024",
-        numeroComptable: "C002",
+        client: "Belkacemi",
+        date: "23/05/2024",
+        numeroComptable: "C001",
       })
     );
   };

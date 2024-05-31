@@ -61,6 +61,11 @@ let items2 = [
     label: <Link to="/facture">Facture</Link>,
   },
   {
+    key: "7",
+    icon: <ListChecks size={18} />,
+    label: <Link to="/checklist">CheckList</Link>,
+  },
+  {
     key: "3",
     icon: <CalendarClock size={18} />,
     label: <Link to="/dec-fisc">Declaration fiscale</Link>,
@@ -73,7 +78,7 @@ let items2 = [
   {
     key: "sub",
     icon: <FileStack size={18} />,
-    label: <Link to="/archives">Archive</Link>,
+    label: "Archive",
     children: [
       {
         key: "6",

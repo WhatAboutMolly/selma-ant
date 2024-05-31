@@ -6,6 +6,7 @@ import {
   SettingOutlined,
   PhoneOutlined,
   MailOutlined,
+  PushpinOutlined,
 } from "@ant-design/icons";
 import "../ui.css";
 import { Link } from "react-router-dom";
@@ -29,6 +30,7 @@ const ClientCard = ({ ...props }) => {
     numeroComptable,
     idClt,
   } = props;
+  console.log(idClt);
   return (
     <Link to={`/clients/info/${idClt}`}>
       <Card
@@ -40,7 +42,9 @@ const ClientCard = ({ ...props }) => {
         cover={
           <img
             alt="example"
-            src={"/src/assets/Client-info/images/" + imageClient}
+            src={"/src/assets/Client-info/" + imageClient}
+            height={200}
+            style={{ objectFit: "cover" }}
           />
         }
       >
@@ -48,13 +52,15 @@ const ClientCard = ({ ...props }) => {
           title={Nomclt}
           description={
             <div className="card-info">
-              <div>{description}</div>
-              <a href={`mailto:${email}`}>
+              <div className="info-compt">
+                <PushpinOutlined /> {description}
+              </div>
+              <span className="info-compt">
                 <MailOutlined key="mail" /> {email}
-              </a>
-              <a href={`tel:${numTlp}`}>
+              </span>
+              <span className="info-compt">
                 <PhoneOutlined key="phone" /> {numTlp}
-              </a>
+              </span>
             </div>
           }
         />

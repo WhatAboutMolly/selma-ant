@@ -11,6 +11,7 @@ import {
   Select,
   Space,
 } from "antd";
+
 import { useSelector, useDispatch } from "react-redux";
 import { AddComptable } from "../features/comptables/comptableSlice";
 import { selectUser } from "../features/user/userSlice";
@@ -73,12 +74,15 @@ const AjoutComptable = () => {
       listTaches: [],
     };
     dispatch(AddComptable(newComptable));
+    setOpen(false);
   };
   return (
     <>
-      <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />}>
-        Nouveau Comptable
-      </Button>
+      <div className="add-button">
+        <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />}>
+          Nouveau Comptable
+        </Button>
+      </div>
       <Drawer
         title="Ajouter un nouveau comptable"
         width={720}
@@ -96,7 +100,7 @@ const AjoutComptable = () => {
           form={form}
           onFinish={onFinish}
         >
-          <Row>
+          <Row gutter={16}>
             <Col span={12}>
               <Form.Item name="NomCmp" label="Nom comptable">
                 <Input placeholder="Nom comptable" />
@@ -109,7 +113,7 @@ const AjoutComptable = () => {
             </Col>
           </Row>
 
-          <Row>
+          <Row gutter={16}>
             <Col span={12}>
               <Form.Item name="email" label="Email">
                 <Input type="email" />
@@ -121,7 +125,7 @@ const AjoutComptable = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row>
+          <Row gutter={16}>
             <Col span={24}>
               <Form.Item name="adresse" label="Adresse">
                 <Input.TextArea
@@ -131,7 +135,7 @@ const AjoutComptable = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row>
+          <Row gutter={16}>
             <Col span={12}>
               <Form.Item name="dateNais" label="Date de naissance">
                 <DatePicker onChange={onChangeDate} />
@@ -215,13 +219,15 @@ const AjoutComptable = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row>
-            <Form.Item>
+          <Row gutter={16} justify={"end"}>
+            <Col>
               <Button type="primary" htmlType="submit">
                 Submit
               </Button>
+            </Col>
+            <Col>
               <Button onClick={onClose}>Annuler</Button>
-            </Form.Item>
+            </Col>
           </Row>
         </Form>
       </Drawer>

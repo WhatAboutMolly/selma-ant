@@ -28,64 +28,64 @@ export default function InfoClients() {
     <Flex justify="space-between">
       <Descriptions title="Information Client" column={2}>
         <Descriptions.Item label="Nom Client">
-          {myClient.Nomclt}
+          {myClient?.Nomclt}
         </Descriptions.Item>
         <Descriptions.Item label="Addresse">
-          {myClient.description}
+          {myClient?.description}
         </Descriptions.Item>
         <Descriptions.Item label={"Email"}>
-          {<a href={`mailto:${myClient.email}`}>{myClient.email}</a>}
+          {<a href={`mailto:${myClient?.email}`}>{myClient?.email}</a>}
         </Descriptions.Item>
         <Descriptions.Item label="Numero Telephone">
-          {myClient.numTlp}
+          {myClient?.numTlp}
         </Descriptions.Item>
         <Descriptions.Item label="Registre commerce">
           {
-            <a href={`http://localhost:8080/${myClient.registreComm}`}>
-              <FileWordOutlined /> {myClient.registreComm}
+            <a href={`http://localhost:8080/${myClient?.registreComm}`}>
+              <FileWordOutlined /> {myClient?.registreComm}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Declaration d'existance">
           {
-            <a href={`http://localhost:8080/${myClient.DeclarationExist}`}>
-              <FileWordOutlined /> {myClient.DeclarationExist}
+            <a href={`http://localhost:8080/${myClient?.DeclarationExist}`}>
+              <FileWordOutlined /> {myClient?.DeclarationExist}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="NIF">
           {
-            <a href={`http://localhost:8080/${myClient.NIF}`}>
-              <FileWordOutlined /> {myClient.NIF}
+            <a href={`http://localhost:8080/${myClient?.NIF}`}>
+              <FileWordOutlined /> {myClient?.NIF}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="NIS">
           {
-            <a href={`http://localhost:8080/${myClient.NIS}`}>
-              <FileWordOutlined /> {myClient.NIS}
+            <a href={`http://localhost:8080/${myClient?.NIS}`}>
+              <FileWordOutlined /> {myClient?.NIS}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Contrat location">
           {
-            <a href={`http://localhost:8080/${myClient.contratLoc}`}>
-              <FileWordOutlined /> {myClient.contratLoc}
+            <a href={`http://localhost:8080/${myClient?.contratLoc}`}>
+              <FileWordOutlined /> {myClient?.contratLoc}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Statut">
           {
-            <a href={`http://localhost:8080/${myClient.statut}`}>
-              <FileWordOutlined /> {myClient.statut}
+            <a href={`http://localhost:8080/${myClient?.statut}`}>
+              <FileWordOutlined /> {myClient?.statut}
             </a>
           }
         </Descriptions.Item>
 
         <Descriptions.Item label="Mot de passe CNAS">
           {
-            <a href={`http://localhost:8080/${myClient.mdpCnas}`}>
-              <FileWordOutlined /> {myClient.mdpCnas}
+            <a href={`http://localhost:8080/${myClient?.mdpCnas}`}>
+              <FileWordOutlined /> {myClient?.mdpCnas}
             </a>
           }
         </Descriptions.Item>
@@ -93,7 +93,7 @@ export default function InfoClients() {
 
       <img
         alt="logo"
-        src={"/src/assets/Client-info/images/" + myClient.imageClient}
+        src={"/src/assets/Client-info/images/" + myClient?.imageClient}
       />
     </Flex>
   );

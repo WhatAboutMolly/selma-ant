@@ -64,12 +64,15 @@ const DrawerApp = () => {
       idClt: generatedId,
     };
     dispatch(AddClient(newClient));
+    setOpen(false);
   };
   return (
     <>
-      <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />}>
-        Nouveau client
-      </Button>
+      <div className="add-button">
+        <Button type="primary" onClick={showDrawer} icon={<PlusOutlined />}>
+          Nouveau client
+        </Button>
+      </div>
       <Drawer
         title="Ajouter un nouveau client"
         width={720}
@@ -87,7 +90,7 @@ const DrawerApp = () => {
           form={form}
           onFinish={onFinish}
         >
-          <Row>
+          <Row gutter={16}>
             <Col span={12}>
               <Form.Item name="Nomclt" label="Nom client">
                 <Input placeholder="Nom client" />
@@ -100,7 +103,7 @@ const DrawerApp = () => {
             </Col>
           </Row>
 
-          <Row>
+          <Row gutter={16}>
             <Col span={12}>
               <Form.Item name="email" label="Email">
                 <Input type="email" />
@@ -112,12 +115,12 @@ const DrawerApp = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row>
+          <Row gutter={16}>
             <Col span={24}>
-              <Form.Item name="description" label="Description">
+              <Form.Item name="description" label="Adresse">
                 <Input.TextArea
                   rows={4}
-                  placeholder="please enter url description"
+                  placeholder="veillez saisir l'adresse du client"
                 />
               </Form.Item>
             </Col>
@@ -179,13 +182,15 @@ const DrawerApp = () => {
               <UploadFileInput enabled="true" field={"mdpCnas"} form={form} />
             </Form.Item>
           </Row>
-          <Row>
-            <Form.Item>
+          <Row gutter={16} justify={"end"}>
+            <Col>
               <Button type="primary" htmlType="submit">
                 Submit
               </Button>
+            </Col>
+            <Col>
               <Button onClick={onClose}>Annuler</Button>
-            </Form.Item>
+            </Col>
           </Row>
         </Form>
       </Drawer>

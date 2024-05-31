@@ -6,6 +6,7 @@ import {
   SettingOutlined,
   PhoneOutlined,
   MailOutlined,
+  PushpinOutlined,
 } from "@ant-design/icons";
 import "../ui.css";
 import { Navigate } from "react-router-dom";
@@ -67,19 +68,22 @@ const ComptableCrad = ({ ...props }) => {
         ]}
       >
         <Meta
-          avatar={
-            <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
-          }
+          avatar={<Avatar src={"/src/assets/Comptable-info/" + imageCmp} />}
           title={NomCmp}
           description={
             <div className="card-info">
-              <div>{adresse}</div>
-              <a href={`mailto:${email}`}>
+              <div>
+                Comptable {nombreAnneesExperience > 5 ? "Senior" : "Junior"}
+              </div>
+              <div className="info-compt">
+                <PushpinOutlined /> {adresse}
+              </div>
+              <span className="info-compt">
                 <MailOutlined key="mail" /> {email}
-              </a>
-              <a href={`tel:${numCmp}`}>
+              </span>
+              <span className="info-compt">
                 <PhoneOutlined key="phone" /> {numCmp}
-              </a>
+              </span>
             </div>
           }
         />
