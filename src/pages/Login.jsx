@@ -7,7 +7,8 @@ import { UpdateUser } from "../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
 import { users } from "../../Data";
 import AppHeader from "../components/AppHeader";
-import { Content } from "antd/es/layout/layout";
+import { Layout } from "antd";
+const { Content } = Layout;
 
 const Login = () => {
   const dispatch = useDispatch();
