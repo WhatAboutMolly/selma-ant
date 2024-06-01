@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     assetsDir: "assets",
     rollupOptions: {
-      external: ["antd"], // Add 'antd' to the external dependencies
+      external: ["antd/dist/antd"], // Add 'antd' to the external dependencies
     },
   },
 });
