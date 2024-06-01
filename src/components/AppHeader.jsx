@@ -22,7 +22,7 @@ export default function AppHeader() {
   return (
     <Header className="header">
       <div className="logo">
-        <img src="../assets/logo/simplex.png" alt="Logo" />
+        <img src="/simplex.png" alt="Logo" />
       </div>
       <div className="menu">
         <DropdownMenu />
