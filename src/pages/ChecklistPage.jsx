@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Checklist from "../components/Checklist";
-import { Col, Row } from "antd";
+import { Col, Row } from "antd/dist/antd";
 import Chart from "chart.js/auto";
 import { useSelector } from "react-redux";
 import { getChecklist } from "../features/checkList/checklistSlice";

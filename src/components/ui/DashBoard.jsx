@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
-import { Button, Input, Space, Table } from "antd";
+import { Button, Input, Space, Table } from "antd/dist/antd";
 import Highlighter from "react-highlight-words";
 import { getArchive } from "../../features/archive/archiveSlice";
 import { useSelector } from "react-redux";

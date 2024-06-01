@@ -20,24 +20,9 @@ import {
 import { useSelector } from "react-redux";
 import { selectUser } from "./src/features/user/userSlice";
 
-import { Breadcrumb, Layout, Menu, theme } from "antd";
-import Login from "./src/pages/Login";
-import Facture from "./src/pages/Facture";
-import DeclFisc from "./src/pages/DeclFisc";
-import DeclParaFisc from "./src/pages/DeclParaFisc";
-import HomePage from "./src/pages/Home";
-import RequireAuth from "./RequireAuth";
-import Clients from "./src/pages/Clients";
-import Comptables from "./src/pages/Comptables";
+import { Layout, Menu, theme } from "antd/dist/antd";
+
 import AppHeader from "./src/components/AppHeader";
-import ListTaches from "./src/pages/ListTaches";
-import InfoClients from "./src/pages/InfoClients";
-import ChecklistPage from "./src/pages/ChecklistPage";
-import Archives from "./src/pages/Archives";
-import ArchiveFisc from "./src/pages/archives/ArchiveFisc";
-import KPI from "./src/pages/KPI";
-import InfoComptable from "./src/pages/infoComptable";
-import Acceuil from "./src/pages/Acceuil";
 
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ["1", "2", "3"].map((key) => ({

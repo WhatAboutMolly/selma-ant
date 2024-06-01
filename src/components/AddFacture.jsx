@@ -10,7 +10,7 @@ import {
   Select,
   Space,
   DatePicker,
-} from "antd";
+} from "antd/dist/antd";
 import UploadFacture from "./ui/uploadFacture";
 import { useSelector, useDispatch } from "react-redux";
 import { addFacture } from "../features/facture/factureSlice";

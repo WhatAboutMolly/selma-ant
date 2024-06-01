@@ -1,6 +1,6 @@
 import React from "react";
-import { App, Carousel, Button } from "antd";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { App, Carousel, Button } from "antd/dist/antd";
+import { Breadcrumb, Layout, Menu, theme } from "antd/dist/antd";
 import AppHeader from "../components/AppHeader";
 import "./pages.css";
 import Login from "./Login";
@@ -23,7 +23,7 @@ const Acceuil = () => (
           <div>
             <div style={contentStyle}>
               <img
-                src="./src/assets/home/acceuil-1.jpg"
+                src="src/assets/home/acceuil-1.jpg"
                 alt="Slide 1"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -32,7 +32,7 @@ const Acceuil = () => (
           <div>
             <div style={contentStyle}>
               <img
-                src="./src/assets/home/acceuil-2.jpg"
+                src="src/assets/home/acceuil-2.jpg"
                 alt="Slide 2"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -41,7 +41,7 @@ const Acceuil = () => (
           <div>
             <div style={contentStyle}>
               <img
-                src="./src/assets/home/acceuil-3.jpg"
+                src="src/assets/home/acceuil-3.jpg"
                 alt="Slide 3"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

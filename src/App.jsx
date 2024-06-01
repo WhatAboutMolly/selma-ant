@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, ConfigProvider, Input, Space, theme } from "antd";
+import { ConfigProvider } from "antd/dist/antd";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AppLayout from "../AppLayout";

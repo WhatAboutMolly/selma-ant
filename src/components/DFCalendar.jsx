@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Calendar } from "antd";
+import { Calendar } from "antd/dist/antd";
 import "./ui.css";
 import { useSelector } from "react-redux";
 import { getArchive } from "../features/archive/archiveSlice";

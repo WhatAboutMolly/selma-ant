@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getArchive } from "../features/archive/archiveSlice";
-import { Avatar, List } from "antd";
+import { Avatar, List } from "antd/dist/antd";
 import { ListChecks } from "lucide-react";
 import { selectUser } from "../features/user/userSlice";
 

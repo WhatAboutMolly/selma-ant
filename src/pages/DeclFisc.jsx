@@ -1,6 +1,6 @@
 import React from "react";
 import DFCalendar from "../components/DFCalendar";
-import { Row, Select, Space, Col } from "antd";
+import { Row, Select, Space, Col } from "antd/dist/antd";
 
 export default function DeclFisc() {
   return (

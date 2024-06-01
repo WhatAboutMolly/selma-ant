@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu, Space, Flex, Dropdown, Button } from "antd";
+import { Layout, Menu } from "antd/dist/antd";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./ui/DropdownMenu";
 import { useSelector } from "react-redux";
@@ -22,7 +22,7 @@ export default function AppHeader() {
   return (
     <Header className="header">
       <div className="logo">
-        <img src="./src/assets/logo/simplex.png" alt="Logo" />
+        <img src="../assets/logo/simplex.png" alt="Logo" />
       </div>
       <div className="menu">
         <DropdownMenu />

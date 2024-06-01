@@ -2,7 +2,7 @@ import React from "react";
 import "./pages.css";
 import TableFacture from "../components/TableFacture";
 import { Link } from "react-router-dom";
-import { Col } from "antd";
+import { Col } from "antd/dist/antd";
 import { Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";

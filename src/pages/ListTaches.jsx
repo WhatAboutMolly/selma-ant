@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, List } from "antd";
+import { Avatar, List } from "antd/dist/antd";
 
 import { Link, useParams } from "react-router-dom";
 import { ListChecks } from "lucide-react";
