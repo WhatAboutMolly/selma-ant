@@ -20,7 +20,7 @@ import {
 import { useSelector } from "react-redux";
 import { selectUser } from "./src/features/user/userSlice";
 
-import { Layout, Menu, theme } from "antd/dist/antd";
+import { Layout, Menu, theme } from "antd";
 
 import AppHeader from "./src/components/AppHeader";
 

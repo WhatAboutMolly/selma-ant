@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Col, Row } from "antd/dist/antd";
+import { Col, Row } from "antd";
 import Chart from "chart.js/auto";
 import { getArchive } from "../features/archive/archiveSlice";
 import { selectAllComptables } from "../features/comptables/comptableSlice";

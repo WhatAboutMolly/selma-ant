@@ -13,6 +13,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.1",
     "@reduxjs/toolkit": "^2.2.1",
+    "antd": "^5.17.4",
     "chart.js": "^4.4.2",
     "dayjs": "^1.11.11",
     "indexof": "^0.0.1",

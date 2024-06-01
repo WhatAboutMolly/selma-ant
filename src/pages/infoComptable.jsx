@@ -1,15 +1,15 @@
 import React from "react";
 import DrawerApp from "../components/DrawerApp";
-import { Flex } from "antd/dist/antd";
+import { Flex } from "antd";
 import { useSelector } from "react-redux";
 import { selectAllClients } from "../features/clients/clientsSlice";
 import "./pages.css";
 import { useParams } from "react-router-dom";
-import { Typography } from "antd/dist/antd";
+import { Typography } from "antd";
 const { Title } = Typography;
-import { Checkbox, Col, Divider, Form, Row, Button } from "antd/dist/antd";
-import { Avatar, List } from "antd/dist/antd";
-import { Descriptions } from "antd/dist/antd";
+import { Checkbox, Col, Divider, Form, Row, Button } from "antd";
+import { Avatar, List } from "antd";
+import { Descriptions } from "antd";
 import {
   EditOutlined,
   EllipsisOutlined,

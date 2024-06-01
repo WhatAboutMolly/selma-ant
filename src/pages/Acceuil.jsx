@@ -1,6 +1,6 @@
 import React from "react";
-import { App, Carousel, Button } from "antd/dist/antd";
-import { Breadcrumb, Layout, Menu, theme } from "antd/dist/antd";
+import { App, Carousel, Button } from "antd";
+import { Breadcrumb, Layout, Menu, theme } from "antd";
 import AppHeader from "../components/AppHeader";
 import "./pages.css";
 import Login from "./Login";

@@ -10,7 +10,7 @@ import {
   Row,
   Select,
   Space,
-} from "antd/dist/antd";
+} from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { AddClient } from "../features/clients/clientsSlice";
 import { selectUser } from "../features/user/userSlice";

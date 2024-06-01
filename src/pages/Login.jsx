@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd/dist/antd";
+import { Button, Checkbox, Form, Input } from "antd";
 import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateUser } from "../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
 import { users } from "../../Data";
-import { Layout } from "antd/dist/antd";
+import { Layout } from "antd";
 const { Content } = Layout;
 
 const Login = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Card, Skeleton, Switch } from "antd/dist/antd";
+import { Avatar, Card, Skeleton, Switch } from "antd";
 import {
   EditOutlined,
   EllipsisOutlined,

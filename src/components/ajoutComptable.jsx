@@ -9,7 +9,7 @@ import {
   Input,
   Row,
   Select,
-} from "antd/dist/antd";
+} from "antd";
 
 import { useSelector, useDispatch } from "react-redux";
 import { AddComptable } from "../features/comptables/comptableSlice";

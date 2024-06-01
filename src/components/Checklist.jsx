@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Checkbox, Form, Row, Button } from "antd/dist/antd";
+import { Checkbox, Form, Row, Button } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { getChecklist } from "../features/checkList/checklistSlice";
 import "./component.css";

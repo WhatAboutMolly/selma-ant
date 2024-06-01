@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu } from "antd/dist/antd";
+import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./ui/DropdownMenu";
 import { useSelector } from "react-redux";

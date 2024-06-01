@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Form, Input, Modal, Radio } from "antd/dist/antd";
+import { Button, Form, Input, Modal, Radio } from "antd";
 import UploadFileInput from "./ui/UploadFile";
 const { TextArea } = Input;
 import { useSelector, useDispatch } from "react-redux";

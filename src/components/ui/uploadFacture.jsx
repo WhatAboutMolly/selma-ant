@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { UploadOutlined } from "@ant-design/icons";
-import { Button, message, Upload } from "antd/dist/antd";
+import { Button, message, Upload } from "antd";
 import dayjs from "dayjs";
 
 const dateFormatList = ["DD/MM/YYYY"];
