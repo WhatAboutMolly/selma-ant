@@ -10,10 +10,4 @@ export default defineConfig({
       external: ["antd"], // Add 'antd' to the external dependencies
     },
   },
-  preview: {
-    assetsDir: "assets",
-    rollupOptions: {
-      external: ["antd"], // Add 'antd' to the external dependencies
-    },
-  },
 });
