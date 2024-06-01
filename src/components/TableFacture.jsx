@@ -177,7 +177,7 @@ const TableFacture = () => {
       key: "fichier",
       ...getColumnSearchProps("fichier"),
       render: (text) => (
-        <a href={`http://localhost:8080/Facture/${text}`}>Ouvrir {text}</a>
+        <a href={`/src/assets/Facture/${text}`}>Ouvrir {text}</a>
       ),
     },
   ];

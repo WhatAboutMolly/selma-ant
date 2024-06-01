@@ -34,7 +34,7 @@ const ListTaches = () => {
         renderItem={(item, index) => (
           <List.Item
             extra={
-              <a href={`http://localhost:8080/List-tache/${item.fichier}`}>
+              <a href={`/src/assets/List-tache/${item.fichier}`}>
                 <ListChecks />
               </a>
             }
