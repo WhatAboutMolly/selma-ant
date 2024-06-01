@@ -18,7 +18,7 @@ export default function Archives() {
         renderItem={(item, index) => (
           <List.Item
             extra={
-              <a href={`http://localhost:8080/${item.fichier}`}>
+              <a href={`/src/assets/${item.fichier}`}>
                 <ListChecks />
               </a>
             }

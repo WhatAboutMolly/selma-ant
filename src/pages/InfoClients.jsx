@@ -41,42 +41,42 @@ export default function InfoClients() {
         </Descriptions.Item>
         <Descriptions.Item label="Registre commerce">
           {
-            <a href={`http://localhost:8080/${myClient?.registreComm}`}>
+            <a href={`/src/assets/${myClient?.registreComm}`}>
               <FileWordOutlined /> {myClient?.registreComm}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Declaration d'existance">
           {
-            <a href={`http://localhost:8080/${myClient?.DeclarationExist}`}>
+            <a href={`/src/assets/${myClient?.DeclarationExist}`}>
               <FileWordOutlined /> {myClient?.DeclarationExist}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="NIF">
           {
-            <a href={`http://localhost:8080/${myClient?.NIF}`}>
+            <a href={`/src/assets/${myClient?.NIF}`}>
               <FileWordOutlined /> {myClient?.NIF}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="NIS">
           {
-            <a href={`http://localhost:8080/${myClient?.NIS}`}>
+            <a href={`/src/assets/${myClient?.NIS}`}>
               <FileWordOutlined /> {myClient?.NIS}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Contrat location">
           {
-            <a href={`http://localhost:8080/${myClient?.contratLoc}`}>
+            <a href={`/src/assets/${myClient?.contratLoc}`}>
               <FileWordOutlined /> {myClient?.contratLoc}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Statut">
           {
-            <a href={`http://localhost:8080/${myClient?.statut}`}>
+            <a href={`/src/assets/${myClient?.statut}`}>
               <FileWordOutlined /> {myClient?.statut}
             </a>
           }
@@ -84,7 +84,7 @@ export default function InfoClients() {
 
         <Descriptions.Item label="Mot de passe CNAS">
           {
-            <a href={`http://localhost:8080/${myClient?.mdpCnas}`}>
+            <a href={`/src/assets/${myClient?.mdpCnas}`}>
               <FileWordOutlined /> {myClient?.mdpCnas}
             </a>
           }
