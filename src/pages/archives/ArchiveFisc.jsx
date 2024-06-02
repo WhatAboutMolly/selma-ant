@@ -46,9 +46,7 @@ const columns = [
     title: "Fichier",
     dataIndex: "fichier",
     key: "fichier",
-    render: (text) => (
-      <a href={`/src/assets/Dec-fisc/${text}`}>ouvrir {text}</a>
-    ),
+    render: (text) => <a href={`/files/Dec-fisc/${text}`}>ouvrir {text}</a>,
   },
 ];
 function ArchiveFisc() {

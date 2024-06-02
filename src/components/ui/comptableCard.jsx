@@ -68,7 +68,7 @@ const ComptableCrad = ({ ...props }) => {
         ]}
       >
         <Meta
-          avatar={<Avatar src={"/src/assets/Comptable-info/" + imageCmp} />}
+          avatar={<Avatar src={"/files/Comptable-info/" + imageCmp} />}
           title={NomCmp}
           description={
             <div className="card-info">

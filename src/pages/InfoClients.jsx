@@ -41,42 +41,42 @@ export default function InfoClients() {
         </Descriptions.Item>
         <Descriptions.Item label="Registre commerce">
           {
-            <a href={`/src/assets/${myClient?.registreComm}`}>
+            <a href={`/files/${myClient?.registreComm}`}>
               <FileWordOutlined /> {myClient?.registreComm}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Declaration d'existance">
           {
-            <a href={`/src/assets/${myClient?.DeclarationExist}`}>
+            <a href={`/files/${myClient?.DeclarationExist}`}>
               <FileWordOutlined /> {myClient?.DeclarationExist}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="NIF">
           {
-            <a href={`/src/assets/${myClient?.NIF}`}>
+            <a href={`/files/${myClient?.NIF}`}>
               <FileWordOutlined /> {myClient?.NIF}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="NIS">
           {
-            <a href={`/src/assets/${myClient?.NIS}`}>
+            <a href={`/files/${myClient?.NIS}`}>
               <FileWordOutlined /> {myClient?.NIS}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Contrat location">
           {
-            <a href={`/src/assets/${myClient?.contratLoc}`}>
+            <a href={`/files/${myClient?.contratLoc}`}>
               <FileWordOutlined /> {myClient?.contratLoc}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Statut">
           {
-            <a href={`/src/assets/${myClient?.statut}`}>
+            <a href={`/files/${myClient?.statut}`}>
               <FileWordOutlined /> {myClient?.statut}
             </a>
           }
@@ -84,7 +84,7 @@ export default function InfoClients() {
 
         <Descriptions.Item label="Mot de passe CNAS">
           {
-            <a href={`/src/assets/${myClient?.mdpCnas}`}>
+            <a href={`/files/${myClient?.mdpCnas}`}>
               <FileWordOutlined /> {myClient?.mdpCnas}
             </a>
           }
@@ -93,7 +93,7 @@ export default function InfoClients() {
 
       <img
         alt="logo"
-        src={"/src/assets/Client-info/images/" + myClient?.imageClient}
+        src={"/files/Client-info/images/" + myClient?.imageClient}
       />
     </Flex>
   );

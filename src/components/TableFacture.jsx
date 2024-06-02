@@ -176,9 +176,7 @@ const TableFacture = () => {
       dataIndex: "fichier",
       key: "fichier",
       ...getColumnSearchProps("fichier"),
-      render: (text) => (
-        <a href={`/src/assets/Facture/${text}`}>Ouvrir {text}</a>
-      ),
+      render: (text) => <a href={`/files/Facture/${text}`}>Ouvrir {text}</a>,
     },
   ];
   return <Table columns={columns} dataSource={allFacture} />;

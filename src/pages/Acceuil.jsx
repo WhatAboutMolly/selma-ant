@@ -23,7 +23,7 @@ const Acceuil = () => (
           <div>
             <div style={contentStyle}>
               <img
-                src="src/assets/home/acceuil-1.jpg"
+                src="/files/home/acceuil-1.jpg"
                 alt="Slide 1"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -32,7 +32,7 @@ const Acceuil = () => (
           <div>
             <div style={contentStyle}>
               <img
-                src="src/assets/home/acceuil-2.jpg"
+                src="/files/home/acceuil-2.jpg"
                 alt="Slide 2"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -41,7 +41,7 @@ const Acceuil = () => (
           <div>
             <div style={contentStyle}>
               <img
-                src="src/assets/home/acceuil-3.jpg"
+                src="/files/home/acceuil-3.jpg"
                 alt="Slide 3"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

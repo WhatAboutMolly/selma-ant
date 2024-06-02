@@ -42,7 +42,7 @@ const ClientCard = ({ ...props }) => {
         cover={
           <img
             alt="example"
-            src={"/src/assets/Client-info/" + imageClient}
+            src={"/files/Client-info/" + imageClient}
             height={200}
             style={{ objectFit: "cover" }}
           />

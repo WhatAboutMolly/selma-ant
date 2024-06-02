@@ -48,42 +48,42 @@ export default function InfoComptable() {
         </Descriptions.Item>
         <Descriptions.Item label="Carte d'identité">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.carteId}`}>
+            <a href={`/files/comptable-info/${myComptable?.carteId}`}>
               <FileWordOutlined /> {myComptable?.carteId}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Extrait de naissance">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.etxraitNais}`}>
+            <a href={`/files/comptable-info/${myComptable?.etxraitNais}`}>
               <FileWordOutlined /> {myComptable?.etxraitNais}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Fiche familiale">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.ficheFam}`}>
+            <a href={`/files/comptable-info/${myComptable?.ficheFam}`}>
               <FileWordOutlined /> {myComptable?.ficheFam}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Residence">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.residence}`}>
+            <a href={`/files/comptable-info/${myComptable?.residence}`}>
               <FileWordOutlined /> {myComptable?.residence}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Carte CHIFA">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.chifa}`}>
+            <a href={`/files/comptable-info/${myComptable?.chifa}`}>
               <FileWordOutlined /> {myComptable?.chifa}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="Carte de groupage">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.groupage}`}>
+            <a href={`/files/comptable-info/${myComptable?.groupage}`}>
               <FileWordOutlined /> {myComptable?.groupage}
             </a>
           }
@@ -91,21 +91,21 @@ export default function InfoComptable() {
 
         <Descriptions.Item label="Contrat de travail">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.contrat}`}>
+            <a href={`/files/comptable-info/${myComptable?.contrat}`}>
               <FileWordOutlined /> {myComptable?.contrat}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="RIP">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.rip}`}>
+            <a href={`/files/comptable-info/${myComptable?.rip}`}>
               <FileWordOutlined /> {myComptable?.rip}
             </a>
           }
         </Descriptions.Item>
         <Descriptions.Item label="CV">
           {
-            <a href={`/src/assets/comptable-info/${myComptable?.cv}`}>
+            <a href={`/files/comptable-info/${myComptable?.cv}`}>
               <FileWordOutlined /> {myComptable?.cv}
             </a>
           }
@@ -114,7 +114,7 @@ export default function InfoComptable() {
 
       <img
         alt="logo"
-        src={"/src/assets/Client-info/images/" + myComptable?.imageClient}
+        src={"/files/Client-info/images/" + myComptable?.imageClient}
       />
     </Flex>
   );
