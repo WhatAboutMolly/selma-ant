@@ -101,7 +101,13 @@ const AjoutComptable = () => {
         >
           <Row gutter={16}>
             <Col span={12}>
-              <Form.Item name="NomCmp" label="Nom comptable">
+              <Form.Item
+                name="NomCmp"
+                label="Nom comptable"
+                rules={[
+                  { required: true, message: "Veuillez remplir ce champs !" },
+                ]}
+              >
                 <Input placeholder="Nom comptable" />
               </Form.Item>
             </Col>
@@ -136,12 +142,24 @@ const AjoutComptable = () => {
           </Row>
           <Row gutter={16}>
             <Col span={12}>
-              <Form.Item name="dateNais" label="Date de naissance">
+              <Form.Item
+                name="dateNais"
+                label="Date de naissance"
+                rules={[
+                  { required: true, message: "Veuillez remplir ce champs !" },
+                ]}
+              >
                 <DatePicker onChange={onChangeDate} />
               </Form.Item>
             </Col>
             <Col span={12}>
-              <Form.Item name="dateRuc" label="Date de recrutement">
+              <Form.Item
+                name="dateRuc"
+                label="Date de recrutement"
+                rules={[
+                  { required: true, message: "Veuillez remplir ce champs !" },
+                ]}
+              >
                 <DatePicker onChange={onChangeDate} />
               </Form.Item>
             </Col>

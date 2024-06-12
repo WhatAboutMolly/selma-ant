@@ -107,7 +107,13 @@ const AddFacture = () => {
           </Row>
           <Row>
             <Col span={12}>
-              <Form.Item name="dateFac" label="Date facturation">
+              <Form.Item
+                name="dateFac"
+                label="Date facturation"
+                rules={[
+                  { required: true, message: "Veuillez remplir ce champs !" },
+                ]}
+              >
                 <DatePicker onChange={onChangeDate} />
               </Form.Item>
             </Col>
