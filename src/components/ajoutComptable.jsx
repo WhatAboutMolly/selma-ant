@@ -50,17 +50,17 @@ const AjoutComptable = () => {
       numCmp: values.numCmp,
       adresse: values.adresse,
       dateNais:
-        values.dateNais.$D +
+        values.dateNais?.$D +
         "/" +
-        (values.dateNais.$M + 1) +
+        (values.dateNais?.$M + 1) +
         "/" +
-        values.dateNais.$y,
+        values.dateNais?.$y,
       dateRuc:
-        values.dateRuc.$D +
+        values.dateRuc?.$D +
         "/" +
-        (values.dateRuc.$M + 1) +
+        (values.dateRuc?.$M + 1) +
         "/" +
-        values.dateRuc.$y,
+        values.dateRuc?.$y,
       carteId: values.carteId,
       etxraitNais: values.etxraitNais,
       ficheFam: values.ficheFam,
