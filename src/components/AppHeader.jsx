@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import DropdownMenu from "./ui/DropdownMenu";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";
-import { DownOutlined } from "@ant-design/icons";
 const { Header } = Layout;
 import "./ui.css";
+import Notification from "./ui/Notification";
 const menu = (
   <Menu>
     <Menu.Item key="1">
@@ -24,8 +24,11 @@ export default function AppHeader() {
       <div className="logo">
         <img src="/files/logo/simplex.png" alt="Logo" />
       </div>
-      <div className="menu">
-        <DropdownMenu />
+      <div className="left-header">
+        <Notification />
+        <div className="menu">
+          <DropdownMenu />
+        </div>
       </div>
     </Header>
   );

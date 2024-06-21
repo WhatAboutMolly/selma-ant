@@ -65,6 +65,13 @@
   background: #ffffff;
 }
 
+.left-header {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 20px;
+}
+
 .logo img {
   height: 75px;
 }
